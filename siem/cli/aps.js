@@ -61,7 +61,7 @@ csv
                 privacy: data[5].trim(),
                 cipher: data[6].trim(),
                 authentication: data[7].trim(),
-                power: data[8].trim(),
+                power: parseInt(data[8].trim()),
                 beacons: data[9].trim(),
                 iv: data[10].trim(),
                 lanIP: data[11].trim(),

@@ -33,7 +33,7 @@ module.exports = {
             type: 'string'
         },
         power: {
-            type: 'string',
+            type: 'number',
             required: true
         },
         beacons: {
