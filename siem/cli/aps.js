@@ -24,6 +24,7 @@ Data format to be received
 */
 
 // clear previous data
+
 try{
     MongoClient.connect(url, { useNewUrlParser: true }, (err, d )=>  {
         if (err) throw err
@@ -72,7 +73,7 @@ csv
                 updatedAt: new Date().getTime(),
             }
 
-            if(dataset.power !== '-1'){
+            if(dataset.power !== -1){
                 MongoClient.connect(url, { useNewUrlParser: true }, (err, conn) => {
                     if(err) throw err
                     var dbClient = conn.db('siem')

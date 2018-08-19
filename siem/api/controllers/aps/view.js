@@ -17,7 +17,7 @@ module.exports = {
         await Ap.stream()
         .sort('power DESC')
         .eachRecord( async(d, next) => {
-            if((new Date().getTime() - new Date(d.lastTimeSeen).getTime()) <= 5000)
+            if((new Date().getTime() - new Date(d.lastTimeSeen).getTime()) <= 10000)
                 result.push(d)
             return next()
         })
