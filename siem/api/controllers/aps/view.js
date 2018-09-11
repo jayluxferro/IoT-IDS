@@ -14,7 +14,7 @@ module.exports = {
     },
     fn: async function(inputs, exits){
         var result = new Array()
-        await Ap.stream()
+        await Aps.stream()
         .sort('power DESC')
         .eachRecord( async(d, next) => {
             if((new Date().getTime() - new Date(d.lastTimeSeen).getTime()) <= 10000)

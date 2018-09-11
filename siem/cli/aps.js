@@ -29,7 +29,7 @@ try{
     MongoClient.connect(url, { useNewUrlParser: true }, (err, d )=>  {
         if (err) throw err
         var dbo = d.db("siem")
-        dbo.collection("ap").drop((err, delOK) => {
+        dbo.collection("aps").drop((err, delOK) => {
           if (err) console.log(err)
           if (delOK) console.log("Collection deleted")
           d.close()
@@ -78,7 +78,7 @@ csv
                     if(err) throw err
                     var dbClient = conn.db('siem')
                     // adding dataset to db
-                    dbClient.collection('ap').insertOne(dataset, (err, res) => {
+                    dbClient.collection('aps').insertOne(dataset, (err, res) => {
                         if(err) throw err
                         counter++      
                     })
