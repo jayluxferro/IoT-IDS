@@ -1,12 +1,15 @@
 #!/usr/bin/python3
 
 import subprocess
+import time
 from time import sleep
 import sys
+import pymongo
+import math
 
 wlan = "wlan0"
 cells = []
-
+start = time.time()
 def generateData():
     if len(sys.argv) == 2:
         wlan = sys.argv[1] # setting wireless scanning interface
@@ -29,9 +32,9 @@ def getCellMac(data):
 
 
 if generateData():
-    print("Please wait...")
+    #print("Please wait...")
     sleep(4)
-    print("Data generated")
+    #print("Data generated")
 
     # parsing data 
     iwlist = open('iwlist')
@@ -102,5 +105,67 @@ if generateData():
 
         parserCount += 1
 
-print(cells)
-print("Found: " + str(len(cells)) + " APs")
+#print(cells)
+#print("Found: " + str(len(cells)) + " APs")
+dbClient = pymongo.MongoClient("mongodb://siem:siem@localhost:27017/siem")
+db = dbClient["siem"]
+ap = db["ap"]
+
+for ap_info in ap.find({}):
+    # searching through scanned data
+    for data in cells:
+        if(data['essid'] == ap_info['essid']):
+            # analyzing data
+            #print("Detected AP: " + data['essid'] + "; analyzing access point")
+            entropy = (-(1/14) * math.log2(1/14)) # for essid
+
+            """
+            /**
+            * @param
+            * group_cipher, protocol, bssid, encryption_key, pairwise_ciphers, frequency, rsn_ie, essid, bit_rates, fm, ie, authentication_suties, channel, mode 
+            */
+            """
+            if ap_info['group_cipher'] == data['group_cipher']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['protocol'] == data['protocol']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['bssid'] == data['bssid']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['encryption_key'] == data['encryption_key']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['pairwise_ciphers'] == data['pairwise_ciphers']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['frequency'] == data['frequency']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['rsn_ie'] == data['rsn_ie']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['bit_rates'] == data['bit_rates']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['fm'] == data['fm']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['authentication_suites'] == data['authentication_suites']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['channel'] == data['channel']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if ap_info['mode'] == data['mode']:
+                entropy += (-(1/14) * math.log2(1/14))
+
+            if entropy != ap_info['entropy']:
+                print("Rouge AP: " + data['essid'])
+                print("Entropy: " + str(entropy))
+                print(len(ap_info))
+                print(time.time()  - start)
+            else:
+                print("Legitimate AP")
+
