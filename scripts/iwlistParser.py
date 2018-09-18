@@ -111,6 +111,12 @@ dbClient = pymongo.MongoClient("mongodb://siem:siem@localhost:27017/siem")
 db = dbClient["siem"]
 ap = db["ap"]
 
+# single ap db config
+single = db["single"]
+
+
+#print(cells)
+aps = len(cells)
 for ap_info in ap.find({}):
     # searching through scanned data
     for data in cells:
@@ -164,8 +170,13 @@ for ap_info in ap.find({}):
             if entropy != ap_info['entropy']:
                 print("Rouge AP: " + data['essid'])
                 print("Entropy: " + str(entropy))
-                print(len(ap_info))
-                print(time.time()  - start)
+                print(aps)
+                execution_time = time.time() - start
+                print(execution_time)
+                single.insert({
+                    'aps': aps,
+                    'exec': execution_time
+                })
             else:
                 print("Legitimate AP")
 
