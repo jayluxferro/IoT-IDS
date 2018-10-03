@@ -14,23 +14,35 @@ y = [] # execution time
 
 #data = single.find({})
 for a in single.find({}):
-    x.append(a['aps'])
+    x.append(a['memory'])
     y.append(a['exec'])
 
 #print(x)
 #print(y)
+
+## Figure 1
+# Subplot 1
 plt.figure(1)
-plt.grid(True)
 plt.subplot(211)
-plt.plot(x, 'r')
-plt.ylabel('Number of detected access points')
-plt.xlabel('Number of Iterations')
-
-plt.subplot(212)
-
 plt.plot(y)
 plt.ylabel('Execution Time (seconds)')
 plt.xlabel('Number of Iterations')
+
+
+# Subplot 2
+plt.grid(True)
+plt.subplot(212)
+plt.plot(x, 'r')
+plt.ylabel('Memory Usage(%)')
+plt.xlabel('Number of Iterations')
+plt.show()
+
+## Figure 2
+plt.figure(2)
+plt.grid(True)
+plt.plot(y, '*g')
+plt.xlabel('Number of Iterations')
+plt.ylabel('Exection Time(seconds)')
 plt.show()
 
 

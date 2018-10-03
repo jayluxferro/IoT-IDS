@@ -1,567 +1,140 @@
-wlan1     Scan completed :
-          Cell 01 - Address: 5C:83:8F:14:70:94
-                    ESSID:""
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
+wlan0     Scan completed :
+          Cell 01 - Address: 00:27:22:8A:FE:E6
+                    Channel:1
                     Frequency:2.412 GHz (Channel 1)
+                    Quality=63/70  Signal level=-47 dBm  
                     Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:wpa_ie=dd180050f20101000050f20401000050f20401000050f2020000
-                    IE: WPA Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Extra:
+                    ESSID:"AirOs"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 6 Mb/s; 9 Mb/s
+                              11 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000000c05efcc
+                    Extra: Last beacon: 52ms ago
+                    IE: Unknown: 00054169724F73
+                    IE: Unknown: 010882848B0C12961824
+                    IE: Unknown: 030101
                     IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
                         Authentication Suites (1) : PSK
-                    Quality=100/100  Signal level=-62 dBm  
-                    Extra:fm=0001
-          Cell 02 - Address: 5C:83:8F:14:70:92
-                    ESSID:""
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.412 GHz (Channel 1)
+                    IE: Unknown: 2A0100
+                    IE: Unknown: 32043048606C
+                    IE: Unknown: DD26000C42000000011E0000000000660203FF0F55424E5400000000000000000000000000000000
+          Cell 02 - Address: 50:2B:73:E4:4E:80
+                    Channel:11
+                    Frequency:2.462 GHz (Channel 11)
+                    Quality=53/70  Signal level=-57 dBm  
                     Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Quality=97/100  Signal level=-70 dBm  
-                    Extra:fm=0001
-          Cell 03 - Address: 5C:83:8F:26:F3:24
-                    ESSID:""
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.412 GHz (Channel 1)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:wpa_ie=dd180050f20101000050f20401000050f20401000050f2020000
-                    IE: WPA Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Extra:
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Quality=0/100  Signal level=-84 dBm  
-                    Extra:fm=0001
-          Cell 04 - Address: 5C:83:8F:14:70:91
-                    ESSID:"KNUST WIFI"
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.412 GHz (Channel 1)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=97/100  Signal level=-66 dBm  
-                    Extra:fm=0003
-          Cell 05 - Address: 46:8A:C3:8C:BA:41
                     ESSID:"sperixlabs"
-                    Protocol:IEEE 802.11bgn
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
                     Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac020c00
+                    Extra:tsf=000000001d1e2be9
+                    Extra: Last beacon: 52ms ago
+                    IE: Unknown: 000A7370657269786C616273
+                    IE: Unknown: 010882848B960C121824
+                    IE: Unknown: 03010B
+                    IE: Unknown: 050400010000
+                    IE: Unknown: 2A0104
+                    IE: Unknown: 32043048606C
                     IE: IEEE 802.11i/WPA2 Version 1
                         Group Cipher : CCMP
                         Pairwise Ciphers (1) : CCMP
                         Authentication Suites (1) : PSK
-                    Quality=48/100  Signal level=-37 dBm  
-                    Extra:fm=0003
-          Cell 06 - Address: 5C:83:8F:14:70:93
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.412 GHz (Channel 1)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=0/100  Signal level=-70 dBm  
-                    Extra:fm=0003
-          Cell 07 - Address: 5C:83:8F:14:74:33
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.412 GHz (Channel 1)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=0/100  Signal level=-84 dBm  
-                    Extra:fm=0003
-          Cell 08 - Address: 20:AA:4B:37:6C:AA
-                    ESSID:"Cisco36096"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac020c00
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    IE: Unknown: DD740050F204104A0001101044000102103B00010310470010FCF794370166ECF250AA98ECB66F9408102100074C696E6B73797310230004453930301024000776312E302E30311042000234321054000800060050F20400011011000445393030100800022688103C0001011049000600372A000120
-                    Quality=36/100  Signal level=-62 dBm  
-                    Extra:fm=0003
-          Cell 09 - Address: 5C:83:8F:49:1E:51
-                    ESSID:"KNUST WIFI"
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=20/100  Signal level=-73 dBm  
-                    Extra:fm=0001
-          Cell 10 - Address: 5C:83:8F:49:1E:53
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=48/100  Signal level=-71 dBm  
-                    Extra:fm=0003
-          Cell 11 - Address: F8:D1:11:77:E0:24
-                    ESSID:"FutureLab"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:300 Mb/s
-                    Extra:wpa_ie=dd160050f20101000050f20401000050f20401000050f202
-                    IE: WPA Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Extra:
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    IE: Unknown: DD810050F204104A0001101044000102103B0001031047001000000000000010000000F8D11177E0241021000754502D4C494E4B10230009544C2D57523934304E10240003312E3010420003312E301054000800060050F204000110110019576972656C65737320526F7574657220544C2D57523934304E100800020086103C000101
-                    Quality=48/100  Signal level=-18 dBm  
-                    Extra:fm=0003
-          Cell 12 - Address: 5C:83:8F:49:1E:54
-                    ESSID:""
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:wpa_ie=dd180050f20101000050f20401000050f20401000050f2020000
-                    IE: WPA Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Extra:
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Quality=20/100  Signal level=-66 dBm  
-                    Extra:fm=0001
-          Cell 13 - Address: 5C:83:8F:14:C9:A3
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=22/100  Signal level=-82 dBm  
-                    Extra:fm=0001
-          Cell 14 - Address: C4:8E:8F:BC:56:D3
-                    ESSID:"Mickey.Net"
-                    Protocol:IEEE 802.11gn
-                    Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:150 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac020000
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    IE: Unknown: DD2F0050F204104A00011010440001021049000600372A0001201054000800010050F20000001011000744522D4D4B4157
-                    Quality=24/100  Signal level=-80 dBm  
-                    Extra:fm=0001
-          Cell 15 - Address: 5C:83:8F:49:1E:52
-                    ESSID:""
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Quality=100/100  Signal level=-66 dBm  
-                    Extra:fm=0001
-          Cell 16 - Address: 5C:83:8F:49:0C:62
-                    ESSID:""
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.437 GHz (Channel 6)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Quality=95/100  Signal level=-78 dBm  
-                    Extra:fm=0001
-          Cell 17 - Address: 5C:83:8F:04:25:13
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=36/100  Signal level=-82 dBm  
-                    Extra:fm=0003
-          Cell 18 - Address: 00:78:88:CC:BE:A3
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=36/100  Signal level=-38 dBm  
-                    Extra:fm=0003
-          Cell 19 - Address: 00:78:88:CC:BE:A2
-                    ESSID:""
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Quality=36/100  Signal level=-38 dBm  
-                    Extra:fm=0001
-          Cell 20 - Address: 68:7F:74:84:CD:73
-                    ESSID:"Prioda"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
+                    IE: Unknown: 2D1A2C101FFFFF00000000000000002C010100000000000000000000
+                    IE: Unknown: 3D160B000000000000000000000000000000000000000000
+                    IE: Unknown: 7F0400000002
+                    IE: Unknown: DD180050F2020101800003A4000027A4000042435E0062322F00
+          Cell 03 - Address: 40:7D:0F:79:55:F8
+                    Channel:9
                     Frequency:2.452 GHz (Channel 9)
+                    Quality=23/70  Signal level=-87 dBm  
                     Encryption key:on
-                    Bit Rates:150 Mb/s
-                    Extra:wpa_ie=dd160050f20101000050f20201000050f20201000050f202
-                    IE: WPA Version 1
-                        Group Cipher : TKIP
-                        Pairwise Ciphers (1) : TKIP
-                        Authentication Suites (1) : PSK
-                    Extra:
+                    ESSID:"VDF"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 18 Mb/s
+                              24 Mb/s; 36 Mb/s; 54 Mb/s
+                    Bit Rates:6 Mb/s; 9 Mb/s; 12 Mb/s; 48 Mb/s
+                    Mode:Master
+                    Extra:tsf=000000a9ba228ad6
+                    Extra: Last beacon: 52ms ago
+                    IE: Unknown: 0003564446
+                    IE: Unknown: 010882848B962430486C
+                    IE: Unknown: 030109
+                    IE: Unknown: 0706236120010E1E
+                    IE: Unknown: 2A0100
+                    IE: Unknown: 32040C121860
                     IE: IEEE 802.11i/WPA2 Version 1
                         Group Cipher : TKIP
-                        Pairwise Ciphers (1) : CCMP
+                        Pairwise Ciphers (2) : CCMP TKIP
                         Authentication Suites (1) : PSK
-                       Preauthentication Supported
-                    IE: Unknown: DD0E0050F204104A0001101044000102
-                    Quality=72/100  Signal level=-82 dBm  
-                    Extra:fm=0001
-          Cell 21 - Address: 00:78:88:CC:BE:A1
-                    ESSID:"KNUST WIFI"
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=48/100  Signal level=-40 dBm  
-                    Extra:fm=0003
-          Cell 22 - Address: 5C:83:8F:49:0C:E4
-                    ESSID:""
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:wpa_ie=dd180050f20101000050f20401000050f20401000050f2020000
+                    IE: Unknown: 0B050000060000
+                    IE: Unknown: 46053208010000
+                    IE: Unknown: 2D1ABC0917FFFF000000000000000000000000000000000000000000
+                    IE: Unknown: 3D1609080000000000000000000000000000000000000000
+                    IE: Unknown: 7F03040008
+                    IE: Unknown: DD090010180200000C0000
                     IE: WPA Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
+                        Group Cipher : TKIP
+                        Pairwise Ciphers (2) : CCMP TKIP
                         Authentication Suites (1) : PSK
-                    Extra:
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Quality=0/100  Signal level=-66 dBm  
-                    Extra:fm=0001
-          Cell 23 - Address: 5C:83:8F:49:0C:E2
-                    ESSID:""
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
+                    IE: Unknown: DD180050F2020101000003A4000027A4000042435E0062322F00
+          Cell 04 - Address: 78:8A:20:B4:51:88
+                    Channel:11
                     Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Quality=20/100  Signal level=-68 dBm  
-                    Extra:fm=0001
-          Cell 24 - Address: 00:78:88:CC:BE:A4
-                    ESSID:""
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:wpa_ie=dd180050f20101000050f20401000050f20401000050f2020000
-                    IE: WPA Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Extra:
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Quality=0/100  Signal level=-34 dBm  
-                    Extra:fm=0001
-          Cell 25 - Address: 5C:83:8F:14:80:41
-                    ESSID:"KNUST WIFI"
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=0/100  Signal level=-78 dBm  
-                    Extra:fm=0001
-          Cell 26 - Address: 5C:83:8F:04:25:12
-                    ESSID:""
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Quality=16/100  Signal level=-71 dBm  
-                    Extra:fm=0001
-          Cell 27 - Address: 5C:83:8F:14:80:43
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=20/100  Signal level=-78 dBm  
-                    Extra:fm=0003
-          Cell 28 - Address: 5C:83:8F:49:0D:31
-                    ESSID:"KNUST WIFI"
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=0/100  Signal level=-78 dBm  
-                    Extra:fm=0001
-          Cell 29 - Address: 5C:83:8F:49:0C:E1
-                    ESSID:"KNUST WIFI"
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=100/100  Signal level=-74 dBm  
-                    Extra:fm=0001
-          Cell 30 - Address: 5C:83:8F:14:BA:D2
-                    ESSID:""
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Quality=36/100  Signal level=-82 dBm  
-                    Extra:fm=0001
-          Cell 31 - Address: 5C:83:8F:49:0C:E3
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=100/100  Signal level=-66 dBm  
-                    Extra:fm=0001
-          Cell 32 - Address: 5C:83:8F:04:25:14
-                    ESSID:""
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:wpa_ie=dd180050f20101000050f20401000050f20401000050f2020000
-                    IE: WPA Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Extra:
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Quality=0/100  Signal level=-74 dBm  
-                    Extra:fm=0001
-          Cell 33 - Address: 5C:83:8F:14:80:42
-                    ESSID:""
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Quality=100/100  Signal level=-74 dBm  
-                    Extra:fm=0001
-          Cell 34 - Address: 5C:83:8F:14:BA:D3
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=81/100  Signal level=-82 dBm  
-                    Extra:fm=0003
-          Cell 35 - Address: 5C:83:8F:14:80:44
-                    ESSID:""
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:wpa_ie=dd180050f20101000050f20401000050f20401000050f2020000
-                    IE: WPA Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Extra:
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Quality=100/100  Signal level=-74 dBm  
-                    Extra:fm=0001
-          Cell 36 - Address: 5C:83:8F:49:0D:34
-                    ESSID:""
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:wpa_ie=dd180050f20101000050f20401000050f20401000050f2020000
-                    IE: WPA Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Extra:
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : PSK
-                    Quality=0/100  Signal level=-82 dBm  
-                    Extra:fm=0001
-          Cell 37 - Address: 5C:83:8F:04:25:11
-                    ESSID:"KNUST WIFI"
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=0/100  Signal level=-74 dBm  
-                    Extra:fm=0001
-          Cell 38 - Address: 5C:83:8F:49:0D:33
-                    ESSID:"eduroam"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:144 Mb/s
-                    Extra:rsn_ie=30140100000fac040100000fac040100000fac012800
-                    IE: IEEE 802.11i/WPA2 Version 1
-                        Group Cipher : CCMP
-                        Pairwise Ciphers (1) : CCMP
-                        Authentication Suites (1) : 802.1x
-                    Quality=0/100  Signal level=-82 dBm  
-                    Extra:fm=0001
-          Cell 39 - Address: 5C:83:8F:49:0D:32
-                    ESSID:""
-                    Protocol:IEEE 802.11bg
-                    Mode:Master
-                    Frequency:2.462 GHz (Channel 11)
-                    Encryption key:on
-                    Bit Rates:54 Mb/s
-                    Quality=0/100  Signal level=-78 dBm  
-                    Extra:fm=0001
-          Cell 40 - Address: 68:72:51:02:05:0D
-                    ESSID:"Enet_NW_SEC"
-                    Protocol:IEEE 802.11bgn
-                    Mode:Master
-                    Frequency:2.472 GHz (Channel 13)
+                    Quality=15/70  Signal level=-95 dBm  
                     Encryption key:off
-                    Bit Rates:144 Mb/s
-                    Quality=97/100  Signal level=-78 dBm  
-                    Extra:fm=0001
+                    ESSID:"LA VILLA HOTEL"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=0000006e80962922
+                    Extra: Last beacon: 560ms ago
+                    IE: Unknown: 000E4C412056494C4C4120484F54454C
+                    IE: Unknown: 010882848B968C129824
+                    IE: Unknown: 03010B
+                    IE: Unknown: 050400010203
+                    IE: Unknown: 2A0100
+                    IE: Unknown: 3204B048606C
+                    IE: Unknown: 0B0509002D0000
+                    IE: Unknown: 2D1AAC011BFFFF000000000000000000000100000000000000000000
+                    IE: Unknown: 3D160B000D00000000000000000000000000000000000000
+                    IE: Unknown: 7F080000000000000040
+                    IE: Unknown: DD180050F2020101000003A4000027A4000042435E0062322F00
+                    IE: Unknown: DD0900037F01010000FF7F
+                    IE: Unknown: DD1300156D00010100010257E58106788A20B35188
+          Cell 05 - Address: 30:B5:C2:E7:A7:A4
+                    Channel:3
+                    Frequency:2.422 GHz (Channel 3)
+                    Quality=37/70  Signal level=-73 dBm  
+                    Encryption key:on
+                    ESSID:"74"
+                    Bit Rates:1 Mb/s; 2 Mb/s; 5.5 Mb/s; 11 Mb/s; 6 Mb/s
+                              9 Mb/s; 12 Mb/s; 18 Mb/s
+                    Bit Rates:24 Mb/s; 36 Mb/s; 48 Mb/s; 54 Mb/s
+                    Mode:Master
+                    Extra:tsf=00000007c6782436
+                    Extra: Last beacon: 52ms ago
+                    IE: Unknown: 00023734
+                    IE: Unknown: 010882848B960C121824
+                    IE: Unknown: 030103
+                    IE: Unknown: 2A0100
+                    IE: IEEE 802.11i/WPA2 Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: 32043048606C
+                    IE: Unknown: 2D1AEF1103FFFF0000000000000000000000000000000406E6E70D00
+                    IE: Unknown: 331AEF1103FFFF0000000000000000000000000000000406E6E70D00
+                    IE: Unknown: 3D1603051100000000000000000000000000000000000000
+                    IE: Unknown: 341603051100000000000000000000000000000000000000
+                    IE: WPA Version 1
+                        Group Cipher : CCMP
+                        Pairwise Ciphers (1) : CCMP
+                        Authentication Suites (1) : PSK
+                    IE: Unknown: DD180050F2020101840003A4000027A4000042435E0062322F00
+                    IE: Unknown: DD0900037F01010000FF7F
+                    IE: Unknown: DD9B0050F204104A0001101044000102103B00010310470010000102030405060708090A0B0C0D0E0F1021000754502D4C494E4B1023000A544C2D57523834324E4410240003322E3010420003312E301054000800060050F20400011011001A576972656C65737320526F7574657220544C2D57523834324E44100800020086103C000101104900140024E26002000101600000020001600100020001
 
