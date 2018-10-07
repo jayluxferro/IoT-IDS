@@ -1,0 +1,1 @@
+iw dev wlan1 interface add mon0 type monitor

@@ -23,18 +23,19 @@ for a in single.find({}):
 ## Figure 1
 # Subplot 1
 plt.figure(1)
-plt.subplot(211)
+plt.subplot(2, 1, 1)
 plt.plot(y)
 plt.ylabel('Execution Time (seconds)')
 plt.xlabel('Number of Iterations')
-
+plt.grid(True)
 
 # Subplot 2
-plt.grid(True)
-plt.subplot(212)
+plt.subplot(2, 1, 2)
 plt.plot(x, 'r')
 plt.ylabel('Memory Usage(%)')
 plt.xlabel('Number of Iterations')
+plt.grid(True)
+plt.tight_layout()
 plt.show()
 
 ## Figure 2
