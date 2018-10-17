@@ -1,24 +1,18 @@
 #!/usr/bin/python
 
 import matplotlib.pyplot as plt
-import pymongo
+import db
 
-dbClient = pymongo.MongoClient("mongodb://siem:siem@localhost:27017/siem")
-db = dbClient["siem"]
-
-single = db["single"]
-
-x = [] # number of APs detected
+x = [] # memory
 y = [] # execution time
 
+conn = db.init()
+c = conn.cursor()
 
-#data = single.find({})
-for a in single.find({}):
-    x.append(a['memory'])
-    y.append(a['exec'])
+for a in c.execute('select * from single'):
+    x.append(a[3]) # memory
+    y.append(a[2]) # exec
 
-#print(x)
-#print(y)
 
 ## Figure 1
 # Subplot 1
