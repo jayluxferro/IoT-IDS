@@ -1,5 +1,10 @@
 #!/usr/bin/python3
 
+"""
+    Rogue Detection Algorithm using a parser in iwlist utility application on linux
+"""
+
+
 import subprocess
 import time
 from time import sleep

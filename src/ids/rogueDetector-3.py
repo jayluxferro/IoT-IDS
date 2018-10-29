@@ -11,6 +11,7 @@ import func
 import random
 
 # init
+distance = sys.argv[1]
 device = db.get_ap()
 #print(device)
 xtics = {
@@ -59,18 +60,15 @@ entropy = xtics['entropy']
 iface = 'mon0'
 
 def hopper(iface):
-    n = 1
     stop_hopper = False
     while not stop_hopper:
-        time.sleep(0.50)
-        os.system('iwconfig %s channel %d' % (iface, n))
-        dig = int(random.random() * 14)
-        if dig != 0 and dig != n:
-            n = dig
+        for n in range(1, 14):
+            time.sleep(0.50)
+            os.system('iwconfig %s channel %d' % (iface, n))
 
 
 def packetHandler(pkt):
-    #pprint.pprint(pkt)
+    pprint.pprint(pkt)
    
     global start
  
@@ -84,9 +82,6 @@ def packetHandler(pkt):
                 channel = str(func.get_channel(temp.payload.payload.info)) # channel
 
                 #print(pkt.show())
-                #hexdump(pkt)
-                #pkt.psdump('packetFormat')
-                #sys.exit()
                 # detection rogue
                 xtics['bssid'] = xtics['bssid'].lower()
                 if (xtics['channel'] == channel) and (xtics['bssid'] == bssid):
@@ -102,27 +97,18 @@ def packetHandler(pkt):
 
                     # checking entropy value
                     if xtics['entropy'] < entropy:
-                        #print('Rogue detected')
-                        #print(bssid + '\t' + channel)
                         execution_time = time.time() - start
-                        #print(execution_time)
-                        #print('[2] ' + str(start))
                         # log data => aps, exec, memory, entropy
-                        db.log(0, execution_time, func.get_usage(), xtics['entropy'])
+                        db.log(0, execution_time, func.get_usage(), xtics['entropy'], 3, distance)
                         #get_usage()
                         #print('\n')
                         xtics['entropy'] = entropy
-    
-                        start = time.time()
+                        sys.exit(0) 
+                    start = time.time()
 
 
-if __name__ == '__main__':
-    #thread = threading.Thread(target=hopper, args=(iface, ), name="ids-hopper")
-    #thread.daemon = True
-    #thread.start()
-    start = time.time()
-    while True:
-        for i in range(1, 14):
-            os.system('iwconfig %s channel %d' % (iface, i))
-            #print('[1] ' + str(start))
-            sniff(iface=iface, count=1, timeout=3, store=0, prn=packetHandler)
+thread = threading.Thread(target=hopper, args=(iface, ), name="ids-hopper")
+thread.daemon = True
+thread.start()
+start = time.time()
+sniff(iface=iface, store=False, prn=packetHandler)

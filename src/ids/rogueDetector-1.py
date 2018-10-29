@@ -1,5 +1,9 @@
 #!/usr/bin/python
 
+"""
+    Rogue Detection algorithm using monitor mode wireless interface and default packet sniffing mode in scapy
+"""
+
 from scapy.all import *
 import pprint
 import os
@@ -9,6 +13,9 @@ import db
 import time
 import func
 import random
+
+# distance
+distance = sys.argv[1]
 
 # init
 device = db.get_ap()
@@ -70,7 +77,7 @@ def hopper(iface):
 
 
 def packetHandler(pkt):
-    #pprint.pprint(pkt)
+    pprint.pprint(pkt)
    
     global start
  
@@ -83,10 +90,6 @@ def packetHandler(pkt):
                 bssid = radioTap.addr2 # bssid
                 channel = str(func.get_channel(temp.payload.payload.info)) # channel
 
-                #print(pkt.show())
-                #hexdump(pkt)
-                #pkt.psdump('packetFormat')
-                #sys.exit()
                 # detection rogue
                 xtics['bssid'] = xtics['bssid'].lower()
                 if (xtics['channel'] == channel) and (xtics['bssid'] == bssid):
@@ -102,26 +105,14 @@ def packetHandler(pkt):
 
                     # checking entropy value
                     if xtics['entropy'] < entropy:
-                        #print('Rogue detected')
-                        #print(bssid + '\t' + channel)
                         execution_time = time.time() - start
-                        #print(execution_time)
-                        #print('[2] ' + str(start))
                         # log data => aps, exec, memory, entropy
-                        db.log(0, execution_time, func.get_usage(), xtics['entropy'])
-                        #get_usage()
-                        #print('\n')
+                        db.log(0, execution_time, func.get_usage(), xtics['entropy'], 1, distance)
                         xtics['entropy'] = entropy
-    
-                        start = time.time()
+                        sys.exit(0)    
+                    start = time.time()
 
 
-if __name__ == '__main__':
-    #thread = threading.Thread(target=hopper, args=(iface, ), name="ids-hopper")
-    #thread.daemon = True
-    #thread.start()
-    start = time.time()
-    while True:
-        #print('[1] ' + str(start))
-        #sniff(iface=iface, count=20, timeout=3, store=0, prn=packetHandler)
-        sniff(iface=iface, prn=packetHandler)
+# start sniffing interface
+start = time.time()
+sniff(iface=iface, store=False, prn=packetHandler)
