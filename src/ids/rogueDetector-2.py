@@ -117,12 +117,10 @@ def packetHandler(pkt):
 
 
 if __name__ == '__main__':
-    #thread = threading.Thread(target=hopper, args=(iface, ), name="ids-hopper")
-    #thread.daemon = True
-    #thread.start()
+    thread = threading.Thread(target=hopper, args=(iface, ), name="ids-hopper")
+    thread.daemon = True
+    thread.start()
     start = time.time()
     while True:
-        for i in range(1, 14):
-            os.system('iwconfig %s channel %d' % (iface, i))
-            #print('[1] ' + str(start))
-            sniff(iface=iface, count=1, timeout=3, store=0, prn=packetHandler)
+        #print('[1] ' + str(start))
+        sniff(iface=iface, count=20, timeout=3, store=0, prn=packetHandler)

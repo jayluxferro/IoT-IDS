@@ -6,12 +6,13 @@ from time import sleep
 import sys
 import pymongo
 import math
+import json
 
 wlan = "wlan0"
 cells = []
 start = time.time()
 def generateData():
-    if len(sys.argv) == 2:
+    if len(sys.argv) >= 2:
         wlan = sys.argv[1] # setting wireless scanning interface
 
     if subprocess.Popen("iwlist " + wlan + " scanning > iwlist", shell=True):
@@ -107,3 +108,18 @@ if generateData():
 
 print(cells)
 print("Found: " + str(len(cells)) + " APs")
+print("\n\n\n")
+print("#") * 100
+if sys.argv[2]:
+    for i in range(len(cells)):
+        #resp = json.dumps(cells[i])
+        #print(resp)
+        #print(type(cells[i]))
+        
+        if str(cells[i]["essid"].strip('\"')) == sys.argv[2]:
+            print(cells[i])
+            print("--") * 50
+        #else:
+            #print(cells[i]["essid"].strip('\"'), sys.argv[2])
+
+print("#") * 100

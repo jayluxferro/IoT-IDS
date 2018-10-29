@@ -8,8 +8,6 @@ import pprint
 def get_usage():
     pid = os.getpid()
     py = psutil.Process(pid)
-    #print(py.memory_percent())
-    #print(py.cpu_percent())
     return py.memory_percent()
 
 

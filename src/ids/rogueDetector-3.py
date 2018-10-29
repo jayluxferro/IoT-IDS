@@ -122,6 +122,7 @@ if __name__ == '__main__':
     #thread.start()
     start = time.time()
     while True:
-        #print('[1] ' + str(start))
-        #sniff(iface=iface, count=20, timeout=3, store=0, prn=packetHandler)
-        sniff(iface=iface, prn=packetHandler)
+        for i in range(1, 14):
+            os.system('iwconfig %s channel %d' % (iface, i))
+            #print('[1] ' + str(start))
+            sniff(iface=iface, count=1, timeout=3, store=0, prn=packetHandler)
