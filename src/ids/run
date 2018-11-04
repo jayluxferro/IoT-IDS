@@ -1,0 +1,6 @@
+#!/bin/bash
+
+python rogueDetector-0.py wlan1 $1
+python rogueDetector-1.py $1
+python rogueDetector-2.py $1
+python rogueDetector-3.py $1
