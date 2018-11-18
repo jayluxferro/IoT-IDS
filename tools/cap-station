@@ -1,6 +1,0 @@
-#!/bin/bash
-cat banner.txt
-
-echo 'Dumping wireless data to log file'
-rm -rvf ../siem/logs/station*
-airodump-ng --bssid 50:2B:73:E4:4E:80 --output-format csv -I 1 --write ../siem/logs/station -W -M  wlan0mon 

@@ -1,4 +1,0 @@
-#!/bin/bash
-while true; do 
-	node ../siem/cli/aps.js && sleep 5; 
-done

@@ -1,5 +1,4 @@
 #!/bin/bash
 cat banner.txt
 
-echo "$1 monitor mode on $2"
-airmon-ng $1 $2
+iw dev $1 interface add mon0 type monitor
