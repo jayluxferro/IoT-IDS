@@ -10,9 +10,11 @@ import time
 import sys
 import sqlite3
 import db
+import func
 
 gen_set = []
 bits = int(math.pow(2, 20))
+collisions = 0
 
 def usage():
     print("Usage: python " + sys.argv[0] + " [counter: integer] [scenario: integer]")
@@ -26,19 +28,15 @@ if __name__ == "__main__":
         X = int(time.time())
         Y = X * 1000
         M = Y * 1000
-        generatedNo = ((X * (Y - C) - M + math.factorial(C)) % bits) + 1/(C + 1)
+        generatedNo = int(((X * (Y - C) - M + math.factorial(C)) % bits) + 1/(C + 1))
+        
+        print(str(generatedNo) + ": " + str(func.get_usage()) + "%")
         try:
             gen_set.index(generatedNo)
         except ValueError:
-            # new generated No. ; add
             gen_set.append(generatedNo)
             continue
-        print("Collision: ", str(generatedNo))
 
-    print(len(gen_set))
-
-    collisions = int(sys.argv[1]) - len(gen_set)
-    print("No. of Collisions", collisions)
-
-    # add to db
-    db.addCollisions(sys.argv[1], collisions, sys.argv[2])
+        # collision found
+        collisions += 1
+    print("Collisions detected: " + str(collisions))
