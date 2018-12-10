@@ -1,0 +1,13 @@
+[Unit]
+Description=WPA supplicant
+Before=network.target
+Wants=network.target
+
+[Service]
+Type=dbus
+BusName=@DBUS_INTERFACE@
+ExecStart=@BINDIR@/wpa_supplicant -u -s -O /run/wpa_supplicant
+
+[Install]
+WantedBy=multi-user.target
+Alias=dbus-@DBUS_INTERFACE@.service
