@@ -9,6 +9,7 @@ import db
 import time
 import func
 import random
+import threading
 
 # init
 distance = sys.argv[1]
