@@ -1,7 +1,0 @@
-#!/bin/bash
-# Generate results for 10 scenarios using wh algo
-
-for x in $(seq 50); 
-do 
-    python wh-generator-buffer.py 1000 $x; sleep 3; 
-done
