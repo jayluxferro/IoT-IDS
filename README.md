@@ -6,7 +6,7 @@ The IoT-IDS framework consists of the following:
 
 It provides Proof-of-Concept results in detecting Rogue Access Points. You can navigate to `RogueAP_Detection` and run the analysis script.
 ```
-cd RogueAP_Detection
+cd RogueAP-Detection
 python analysis.py
 ```
 
