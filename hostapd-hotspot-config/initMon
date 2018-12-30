@@ -1,2 +1,0 @@
-#!/bin/bash
-iw dev "$1" interface add mon0 type monitor
