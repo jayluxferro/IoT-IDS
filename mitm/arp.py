@@ -9,6 +9,7 @@ import sys
 import os
 import db
 import subprocess
+import logger as log
 
 def cache(iface):
     result = subprocess.check_output(['arp', '-a', '-i', iface], shell=False).split('\n')
@@ -51,8 +52,26 @@ def find_mac(iface, ip, mac):
     return db.find_mac(mac)
 
 def add_entry(iface, ip, mac):
-    res = subprocess.check_output(['arp', '-i', iface, '-s', ip, mac], shell=False)
-
+    iface = str(iface)
+    ip = str(ip)
+    mac = str(mac)
+    if ip != '0.0.0.0':
+        res = subprocess.check_output(['arp', '-i', iface, '-s', ip, mac], shell=False)
+        log.success('Added Sys ARP Entry => ' + ip + ' = ' + mac)
+        
 def update_entry(iface, ip, mac):
     delete_entry(iface, ip)
     add_entry(iface, ip, mac)
+
+def metric(ip):
+    result = subprocess.check_output(['traceroute', '--max-hops=1', ip], shell=False)
+    result = tuple(result.split('\n')[1])
+    counter = 0
+    for x in result:
+        if(x == '*'):
+            counter += 1
+    
+    if counter >= 1:
+        return 1
+    else:
+        return 2
