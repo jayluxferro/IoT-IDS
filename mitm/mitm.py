@@ -9,6 +9,7 @@ import db
 import logger as log
 from scapy.all import *
 import arp
+import time
 
 def mitm(iface, data):
     log.default('Detecting MITM => ' + str(data['ip']) + ' = ' + str(data['mac']))
@@ -33,10 +34,11 @@ def mitm(iface, data):
     ans, un = sr(arp_packet)
     if len(ans.sessions()) >= 1:
         # host is alive
+        db.add_detection_time(time.time() - i_data_time)
         log.error('MITM Detected => IP: ' + i_db_data['ip'] + ', MAC: ' + i_db_data['mac'] + ' ::: Spoofing Client ::: IP: ' + i_data_ip + ', MAC: ' + db_data_mac)
         # add mitigation
         # delete incoming arp entry and keep new one
-        arp.delete_entry(iface, i_data_ip, i_data_mac)
+        arp.delete_entry(iface, i_data_ip)
         arp.add_entry(iface, db_data_ip, db_data_mac)
     else:
         # possible DOS;
@@ -45,8 +47,10 @@ def mitm(iface, data):
             # authorized client has been blocked
             # checking last time seen
             if (i_data_time - db_data_time) < arp.ttl(iface):
+                # add detection
+                db.add_detection_time(time.time() - i_data_time)
                 # confirmed dos
-                arp_delete(iface, i_data_ip, i_data_mac)
+                arp.delete_entry(iface, i_data_ip)
                  
                 log.error('MITM Detected => IP: ' + i_db_data['ip'] + ', MAC: ' + i_db_data['mac'] + ' ::: Spoofing Client ::: IP: ' + i_data_ip + ', MAC: ' + db_data_mac)
      

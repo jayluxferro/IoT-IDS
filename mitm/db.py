@@ -49,10 +49,29 @@ def update_arp(seen, mac, metric):
     conn = init()
     conn.cursor().execute("update arp set last_seen='" + str(seen) + "', valid='" + str(metric) + "' where mac='" + mac + "'")
     conn.commit()
-    d.success('Updated DB ARP entry => ' + mac )
+    d.success('Updated DB ARP entry => ' + mac ) 
 
 def delete_arp(ip, mac):
     conn = init()
     conn.cursor().execute("delete from arp where ip='" + ip + "' and mac='" + mac + "'")
     conn.commit()
     d.success("Delete DB ARP entry => " + ip + " = " + mac)
+
+def cache():
+    conn = init()
+    return conn.cursor().execute("select * from arp").fetchall()
+
+def add_detection_time(time):
+    conn = init()
+    conn.cursor().execute("insert into detections(time) values('" + str(time) + "')")
+    conn.commit()
+
+def add_cpu(percent):
+    conn = init()
+    conn.cursor().execute("insert into cpu(usage) values('" + str(percent) + "')")
+    conn.commit()
+
+def add_rtt(time, scenario):
+    conn = init()
+    conn.cursor().execute("insert into rtt(time, scenario) values('" + str(time) + "', '" + str(scenario) + "')")
+    conn.commit()

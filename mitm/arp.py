@@ -16,13 +16,17 @@ def cache(iface):
     arp_data = []
     for x in result:
         fields = x.split(' ')
-        if len(fields) is not 7:
+        if len(fields) < 8:
             continue
         ip_address = fields[1].strip('()')
         mac_address = fields[3]
         interface = fields[6]
+        if interface != iface:
+            interface = fields[7]
         gateway = True if fields[0] == '_gateway' else False
-        
+        if fields[0] == hostname():
+            gateway = True       
+ 
         # append data
         if ip_address != 'in':
             arp_data.append({'ip': ip_address, 'mac': mac_address, 'interface': interface, 'gateway': gateway})
@@ -37,7 +41,10 @@ def delete_all_entries(iface):
         delete_entry(iface, x['ip'])
 
 def delete_entry(iface, ip):
-    res = subprocess.check_output(['arp', '-i', iface, '-d', ip], shell=False) 
+    try:
+        res = subprocess.check_output(['arp', '-i', iface, '-d', ip], shell=False)
+    except:
+        pass 
 
 def find(iface, ip, mac):
     exists = False
@@ -75,3 +82,6 @@ def metric(ip):
         return 1
     else:
         return 2
+
+def hostname():
+    return subprocess.check_output(['hostname'], shell=False).strip()

@@ -38,7 +38,7 @@ def decide(iface, sio, data, log):
             ip = data['ip']
             mac = data['mac']
             seen = data['time']
-            db.upate_arp(seen, mac, metric)
+            db.update_arp(seen, mac, metric)
             arp.add_entry(iface, ip, mac)
         else:
             # not eapol
@@ -62,4 +62,6 @@ def decide(iface, sio, data, log):
         # update time seen
         seen = data['time']
         mac = data['mac']
-        db.update_arp(seen, mac, metric)  
+        ip = data['ip']
+        db.update_arp(seen, mac, metric) 
+        arp.update_entry(iface, ip, mac)  
