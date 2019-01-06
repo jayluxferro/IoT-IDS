@@ -75,3 +75,15 @@ def add_rtt(time, scenario):
     conn = init()
     conn.cursor().execute("insert into rtt(time, scenario) values('" + str(time) + "', '" + str(scenario) + "')")
     conn.commit()
+
+def get_cpu():
+    conn = init()
+    return conn.cursor().execute("select * from cpu limit 10").fetchall()
+
+def get_detections():
+    conn = init()
+    return conn.cursor().execute("select * from detections").fetchall()
+
+def get_rtt():
+    conn = init()
+    return conn.cursor().execute("select * from rtt").fetchall()
