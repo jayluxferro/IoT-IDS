@@ -3,7 +3,6 @@
 from Crypto.Cipher import PKCS1_OAEP
 from Crypto.PublicKey import RSA
 from Crypto import Random
-import binascii
 
 message = "Testing"
 random_generator = Random.new().read

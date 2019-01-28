@@ -1,0 +1,16 @@
+build/
+dist/
+venv*/
+.*/
+docs/_*/
+
+src/ecdsa
+src/Makefile
+src/test.c
+
+*.o
+*.pyc
+*.so
+*.egg-info
+MANIFEST
+binaryField.*

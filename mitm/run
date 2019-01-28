@@ -1,0 +1,6 @@
+#!/bin/bash
+python ipc.py "$1" &
+sleep 5
+python analyzer.py "$1" &
+sleep 5
+python detection.py "$1" &

@@ -1,0 +1,6 @@
+include LICENSE
+include README.rst
+include src/_ecdsa.h
+include src/curve.h
+include src/curveMath.h
+include src/point.h
