@@ -1,0 +1,1 @@
+ps aux | grep 'python auth.py' | awk {'print $2'} | xargs kill -9

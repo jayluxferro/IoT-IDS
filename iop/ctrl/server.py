@@ -39,12 +39,17 @@ def online(sid, data):
     if devInfo['status'] == 0:
         sio.disconnect(sid)
         return
-    l.default('Device: {0} is online'.format(data['devId']))
+    l.default('Fleet: {0} is online'.format(data['devId']))
 
 @sio.on('disconnect')
 def disconnect(sid):
     l.error('Client socket closed => {0}'.format(str(sid)))
 
+
+@sio.on('auth')
+def auth(sid, data):
+    l.default('Sending request to fleet server')
+    sio.emit(str(data['fleetId']), data)
 
 if __name__ == "__main__":
     #db.updateKeys()

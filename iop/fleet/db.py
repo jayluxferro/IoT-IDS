@@ -36,7 +36,7 @@ def registerDevice(devId, pubKey):
 def getDeviceInfo(devId):
     db = init()
     cursor = db.cursor()
-    cursor.execute("select * from keys where devId=?", (devId,))
+    cursor.execute("select * from devices where devId=?", (devId,))
     return cursor.fetchone()
 
 

@@ -24,9 +24,9 @@ def on_connect():
     # register deviceId
     #sio.emit('register', {'devId': deviceId, 'pubKey': keys['pubKey']})
 
-@sio.on('device')
+@sio.on(str(deviceId))
 def on_message(data):
-    print('message received with ', data)
+    print('message received with {0}'.format(data))
     #sio.emit('my response', {'response': 'my response'})
 
 @sio.on('disconnect')

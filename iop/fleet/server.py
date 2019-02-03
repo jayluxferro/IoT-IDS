@@ -46,6 +46,17 @@ def disconnect(sid):
 def register(sid, data):
     fx.register(data)    
 
+
+@sio.on('offline')
+def offline(sid, data):
+    l.warning('Client {0} is offline'.format(str(sid)))
+
+
+
+@sio.on(str(db.getDevId()))
+def auth(sid, data):
+    sio.emit(str(data['devId']), data)
+
 if __name__ == "__main__":
     eventlet.wsgi.server(eventlet.listen(('127.0.0.1', 5000)), app)
     #db.updateKeys()
