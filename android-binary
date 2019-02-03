@@ -1,0 +1,17 @@
+# create tool-chain - one line
+$NDK/build/tools/make-standalone-toolchain.sh --platform=android-3 --install-dir=/tmp/my-android-toolchain
+
+# add to terminal PATH variable
+export PATH=/tmp/my-android-toolchain/bin:$PATH
+
+# make alias CC be the new gcc binary
+export CC=arm-linux-androideabi-gcc
+
+# compile your C code(I tried hello world)
+$CC -o foo.o -c foo.c
+
+# push binary to phone
+adb push foo.o /data/local/tmp
+
+# execute binary
+adb /data/local/tmp/foo.o

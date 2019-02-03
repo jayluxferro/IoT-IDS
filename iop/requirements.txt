@@ -1,0 +1,5 @@
+python-socketio[client]
+eventlet
+cryptography
+fastecdsa
+urllib3

@@ -1,0 +1,32 @@
+From a2426829ce426de82d2fa47071ca41ea81c43307 Mon Sep 17 00:00:00 2001
+From: Jouni Malinen <jouni@qca.qualcomm.com>
+Date: Fri, 1 Dec 2017 20:22:44 +0200
+Subject: nl80211: Fix NL80211_ATTR_SMPS_MODE encoding
+
+This nl80211 attribute uses NLA_U8 policy in cfg80211 and
+hostapd/wpa_supplicant needs to use same size when writing the
+attribute.
+
+This fixes AP mode regression triggered by kernel commit "net: netlink:
+Update attr validation to require exact length for some types" in
+v4.15-rc1 that resulted in the following debug log entry when trying to
+enable beaconing:
+nl80211: Beacon set failed: -34 (Numerical result out of range)
+
+Fixes: da1080d7215f ("nl80211: Advertise and configure SMPS modes")
+Signed-off-by: Jouni Malinen <jouni@qca.qualcomm.com>
+---
+ src/drivers/driver_nl80211.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+--- a/src/drivers/driver_nl80211.c
++++ b/src/drivers/driver_nl80211.c
+@@ -3676,7 +3676,7 @@ static int wpa_driver_nl80211_set_ap(void *priv,
+ 			smps_mode = NL80211_SMPS_OFF;
+ 			break;
+ 		}
+-		if (nla_put_u32(msg, NL80211_ATTR_SMPS_MODE, smps_mode))
++		if (nla_put_u8(msg, NL80211_ATTR_SMPS_MODE, smps_mode))
+ 			goto fail;
+ 	}
+ 
