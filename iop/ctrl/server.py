@@ -8,12 +8,12 @@ import socketio
 import eventlet
 import sys
 import db
-
 sys.path.append('..')
 reload(sys)
 sys.setdefaultencoding('utf8')
 import logger as l
 import fx
+import db
 
 # Socket defaults
 sio = socketio.Server()
@@ -27,6 +27,10 @@ app = socketio.WSGIApp(sio, static_files={
 def connect(sid, environ):
     l.default('Client socket opened => {0}'.format(str(sid)))
 
+
+@sio.on('register')
+def register(sid, data):
+    fx.register(data)    
 
 @sio.on('online')
 def online(sid, data):
@@ -42,10 +46,6 @@ def disconnect(sid):
     l.error('Client socket closed => {0}'.format(str(sid)))
 
 
-@sio.on('register')
-def register(sid, data):
-    fx.register(data)    
-
 if __name__ == "__main__":
-    eventlet.wsgi.server(eventlet.listen(('127.0.0.1', 5000)), app)
     #db.updateKeys()
+    eventlet.wsgi.server(eventlet.listen(('127.0.0.1', 6000)), app)

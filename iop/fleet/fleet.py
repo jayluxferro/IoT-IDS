@@ -1,8 +1,8 @@
 #!/usr/bin/python
 """
-Device Client
+Fleet Client
 """
-from time import sleep
+
 import sys
 sys.path.append('..')
 import func
@@ -14,15 +14,14 @@ sys.setdefaultencoding('utf8')
 
 # Defaults
 sio = socketio.Client()
-deviceId = func.deviceId()
-keys = db.getKeys()
+devInfo = db.getDeviceInfo(db.getDevId())
 
 @sio.on('connect')
 def on_connect():
     print('connection established')
-    sio.emit('online', {'devId': deviceId})
     # register deviceId
-    #sio.emit('register', {'devId': deviceId, 'pubKey': keys['pubKey']})
+    #sio.emit('register', {'devId': db.getDevId(), 'pubKey': devInfo['pubKey']})
+    sio.emit('online', {'devId': db.getDevId()})
 
 @sio.on('device')
 def on_message(data):
@@ -32,17 +31,11 @@ def on_message(data):
 @sio.on('disconnect')
 def on_disconnect():
     print('disconnected from server')
-    sio.emit('offline', {'deviceId': deviceId})
-    initialize()
 
 
-def initialize():
-    try:
-        sio.connect('http://localhost:5000')
-        sio.wait()
-    except:
-        l.error('Failed to connect to fleet server')
-        sleep(5)
-        initialize()
-
-initialize()
+try:
+    sio.connect('http://localhost:6000')
+    sio.wait()
+except:
+    l.error('Failed to connect to ctrl server')
+    sys.exit(0)

@@ -1,0 +1,1 @@
+ps aux | grep 'python fleet.py' | awk {'print $2'} | xargs kill -9

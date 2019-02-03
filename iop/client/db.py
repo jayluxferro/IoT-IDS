@@ -24,3 +24,10 @@ def updateKeys():
     cursor.execute("update keys set privKey=?, pubKey=?, devId=?", (privKey, pubKey, func.deviceId()))
     db.commit()
     l.success("Priv/Pub Keys updated")
+
+
+def getKeys():
+    db = init()
+    cursor = db.cursor()
+    cursor.execute("select * from keys limit 1")
+    return cursor.fetchone()

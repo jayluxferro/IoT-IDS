@@ -1,0 +1,362 @@
+<Ether  dst=e0:f8:47:2c:ff:16 src=50:2b:73:e4:4e:80 type=0x888e |<EAPOL  version=802.1X-2004 type=EAPOL-Key len=95 |<Raw  load='\x02\x00\x8a\x00\x10\x00\x00\x00\x00\x00\x00\x00\x01\xb7\xb2\x95\xff?\x01_\xf5\x133\xd6p\xef\x1d`\xacMf2\x87\x8b\x06\x86\xd32\xa6\xb5s\xb2\xb9\xe6p\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' |>>>
+
+
+<Ether  dst=33:33:00:00:00:fb src=e0:f8:47:2c:ff:16 type=0x86dd |<IPv6  version=6 tc=0 fl=24416 plen=330 nh=UDP hlim=255 src=fe80::c35:c6f8:6356:bef4 dst=ff02::fb |<UDP  sport=mdns dport=mdns len=330 chksum=0x5872 |<DNS  id=0 qr=0 opcode=QUERY aa=0 tc=0 rd=0 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=5 ancount=0 nscount=5 arcount=1 qd=<DNSQR  qname='Jay\xe2\x80\x99s MacBook Pro._ssh._tcp.local.' qtype=ALL qclass=IN |<DNSQR  qname='Jay\xe2\x80\x99s MacBook Pro._sftp-ssh._tcp.local.' qtype=ALL qclass=IN |<DNSQR  qname='Jay\xe2\x80\x99s MacBook Pro._atc._tcp.local.' qtype=ALL qclass=IN |<DNSQR  qname='Jay\xe2\x80\x99s MacBook Pro._companion-link._tcp.local.' qtype=ALL qclass=IN |<DNSQR  qname='Jays-MacBook-Pro.local.' qtype=ALL qclass=IN |>>>>> an=None ns=<DNSRRSRV  rrname='Jay\xe2\x80\x99s MacBook Pro._ssh._tcp.local.' type=SRV rclass=IN ttl=120 rdlen=8 priority=0 weight=0 port=22 target='Jays-MacBook-Pro.local.' |<DNSRRSRV  rrname='Jay\xe2\x80\x99s MacBook Pro._sftp-ssh._tcp.local.' type=SRV rclass=IN ttl=120 rdlen=8 priority=0 weight=0 port=22 target='Jays-MacBook-Pro.local.' |<DNSRRSRV  rrname='Jay\xe2\x80\x99s MacBook Pro._atc._tcp.local.' type=SRV rclass=IN ttl=120 rdlen=8 priority=0 weight=0 port=49180 target='Jays-MacBook-Pro.local.' |<DNSRRSRV  rrname='Jay\xe2\x80\x99s MacBook Pro._companion-link._tcp.local.' type=SRV rclass=IN ttl=120 rdlen=8 priority=0 weight=0 port=49373 target='Jays-MacBook-Pro.local.' |<DNSRR  rrname='Jays-MacBook-Pro.local.' type=AAAA rclass=IN ttl=120 rdata='fe80::c35:c6f8:6356:bef4' |>>>>> ar=<DNSRROPT  rrname='.' type=OPT rclass=1440 extrcode=0 version=0 z=4500 rdlen=18 rdata=[<EDNS0TLV  optcode=Reserved optlen=14 optdata='\x00\x01\xc8*\x14\x10\x13\x86\xe0\xf8G,\xff\x16' |>] |> |>>>>
+
+
+<Ether  dst=ff:ff:ff:ff:ff:ff src=50:2b:73:e4:4e:80 type=0x806 |<ARP  hwtype=0x1 ptype=0x800 hwlen=6 plen=4 op=who-has hwsrc=50:2b:73:e4:4e:80 psrc=172.24.1.1 hwdst=00:00:00:00:00:00 pdst=172.24.1.80 |>>
+
+
+<Ether  dst=ff:ff:ff:ff:ff:ff src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=328 id=21780 flags= frag=0 ttl=255 proto=udp chksum=0x6591 src=0.0.0.0 dst=255.255.255.255 options=[] |<UDP  sport=bootpc dport=bootps len=308 chksum=0xf1e |<BOOTP  op=BOOTREQUEST htype=1 hlen=6 hops=0 xid=2964286951 secs=4 flags= ciaddr=0.0.0.0 yiaddr=0.0.0.0 siaddr=0.0.0.0 giaddr=0.0.0.0 chaddr='\xe0\xf8G,\xff\x16\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' sname='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' file='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' options='c\x82Sc' |<DHCP  options=[message-type=discover param_req_list=[1, 121, 3, 6, 15, 119, 252, 95, 44, 46] max_dhcp_size=1500 client_id='\x01\xe0\xf8G,\xff\x16' lease_time=7776000 hostname='Jays-MBP' end pad pad pad pad pad pad pad pad pad pad pad pad pad pad pad] |>>>>>
+
+
+<Ether  dst=ff:ff:ff:ff:ff:ff src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=328 id=21781 flags= frag=0 ttl=255 proto=udp chksum=0x6590 src=0.0.0.0 dst=255.255.255.255 options=[] |<UDP  sport=bootpc dport=bootps len=308 chksum=0x250c |<BOOTP  op=BOOTREQUEST htype=1 hlen=6 hops=0 xid=2964286951 secs=6 flags= ciaddr=0.0.0.0 yiaddr=0.0.0.0 siaddr=0.0.0.0 giaddr=0.0.0.0 chaddr='\xe0\xf8G,\xff\x16\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' sname='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' file='\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00' options='c\x82Sc' |<DHCP  options=[message-type=request param_req_list=[1, 121, 3, 6, 15, 119, 252, 95, 44, 46] max_dhcp_size=1500 client_id='\x01\xe0\xf8G,\xff\x16' requested_addr=172.24.1.80 server_id=172.24.1.1 hostname='Jays-MBP' end pad pad pad pad pad pad pad pad pad] |>>>>>
+
+
+<Ether  dst=ff:ff:ff:ff:ff:ff src=e0:f8:47:2c:ff:16 type=0x806 |<ARP  hwtype=0x1 ptype=0x800 hwlen=6 plen=4 op=who-has hwsrc=e0:f8:47:2c:ff:16 psrc=172.24.1.80 hwdst=00:00:00:00:00:00 pdst=172.24.1.80 |>>
+
+
+<Ether  dst=01:00:5e:00:00:02 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=6 tos=0x0 len=32 id=3161 flags= frag=0 ttl=1 proto=igmp chksum=0x8b14 src=172.24.1.80 dst=224.0.0.2 options=[<IPOption_Router_Alert  copy_flag=1 optclass=control option=router_alert length=4 alert=router_shall_examine_packet |>] |<Raw  load='\x17\x00\x08\x04\xe0\x00\x00\xfb' |>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=26350 flags= frag=0 ttl=255 proto=udp chksum=0xa53c src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=52633 dport=domain len=68 chksum=0x45d1 |<DNS  id=19418 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=87 id=21931 flags= frag=0 ttl=255 proto=udp chksum=0xb781 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=58143 dport=domain len=67 chksum=0x91ab |<DNS  id=359 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='lb._dns-sd._udp.0.56.168.192.in-addr.arpa.' qtype=PTR qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=67 id=56290 flags= frag=0 ttl=255 proto=udp chksum=0x315e src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=57486 dport=domain len=47 chksum=0xa5a6 |<DNS  id=25558 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='p26-caldav.icloud.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=ff:ff:ff:ff:ff:ff src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=96 id=42519 flags= frag=0 ttl=64 proto=udp chksum=0x78f6 src=172.24.1.80 dst=172.24.1.255 options=[] |<UDP  sport=netbios_ns dport=netbios_ns len=76 chksum=0xc2bc |<NBNSQueryRequest  NAME_TRN_ID=17767 FLAGS=10512 QDCOUNT=1 ANCOUNT=0 NSCOUNT=0 ARCOUNT=1 QUESTION_NAME='MACBOOKPRO-1386' SUFFIX=workstation NULL=0 QUESTION_TYPE=NB QUESTION_CLASS=INTERNET |<Raw  load='\xc0\x0c\x00 \x00\x01\x00\x00\x03\x84\x00\x06`\x00\xac\x18\x01P' |>>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=59 id=65316 flags= frag=0 ttl=255 proto=udp chksum=0xd23 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=54843 dport=domain len=39 chksum=0x1fdb |<DNS  id=34547 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='www.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=61 id=59204 flags= frag=0 ttl=255 proto=udp chksum=0x2501 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=52486 dport=domain len=41 chksum=0x8cb6 |<DNS  id=47030 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='www.youtube.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=67 id=58789 flags= frag=0 ttl=255 proto=udp chksum=0x269a src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53753 dport=domain len=47 chksum=0xc0d5 |<DNS  id=14826 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=61 id=34166 flags= frag=0 ttl=255 proto=udp chksum=0x87d0 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=52486 dport=domain len=41 chksum=0x8db7 |<DNS  id=47030 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='www.youtube.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=32 id=50918 flags= frag=0 ttl=64 proto=udp chksum=0x5965 src=172.24.1.80 dst=172.24.1.1 options=[] |<UDP  sport=49181 dport=192 len=12 chksum=0xd965 |<Raw  load='\x08\x01\x03\x10' |>>>>
+
+
+<Ether  dst=33:33:00:00:00:fb src=e0:f8:47:2c:ff:16 type=0x86dd |<IPv6  version=6 tc=0 fl=24416 plen=402 nh=UDP hlim=255 src=fe80::c35:c6f8:6356:bef4 dst=ff02::fb |<UDP  sport=mdns dport=mdns len=402 chksum=0x2119 |<DNS  id=0 qr=0 opcode=QUERY aa=0 tc=0 rd=0 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=23 ancount=0 nscount=0 arcount=1 qd=<DNSQR  qname='_airplay._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_raop._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_uscan._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_uscans._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ippusb._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_scanner._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ipp._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ipps._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_printer._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_pdl-datastream._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ptp._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_airport._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_daap._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_touch-remote._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_airplay._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_raop._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_apple-mobdev._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='92c907f1._sub._apple-mobdev2._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_apple-pairable._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_afpovertcp._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_smb._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_rfb._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_adisk._tcp.local.' qtype=PTR qclass=IN |>>>>>>>>>>>>>>>>>>>>>>> an=None ns=None ar=<DNSRROPT  rrname='.' type=OPT rclass=1440 extrcode=0 version=0 z=4500 rdlen=18 rdata=[<EDNS0TLV  optcode=Reserved optlen=14 optdata='\x00\x01\xc8*\x14\x10\x13\x86\xe0\xf8G,\xff\x16' |>] |> |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=65 id=15690 flags= frag=0 ttl=255 proto=udp chksum=0xcef7 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=54539 dport=domain len=45 chksum=0x92d3 |<DNS  id=58688 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='pd.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=67 id=19429 flags= frag=0 ttl=255 proto=udp chksum=0xc15b src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53753 dport=domain len=47 chksum=0xc1d6 |<DNS  id=14826 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=61 id=31949 flags= frag=0 ttl=255 proto=udp chksum=0x8f78 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=52486 dport=domain len=41 chksum=0x8cb6 |<DNS  id=47030 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='www.youtube.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=65 id=43606 flags= frag=0 ttl=255 proto=udp chksum=0x62ec src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=54539 dport=domain len=45 chksum=0x93d4 |<DNS  id=58688 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='pd.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=67 id=51053 flags= frag=0 ttl=255 proto=udp chksum=0x44d2 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=57486 dport=domain len=47 chksum=0xa4a5 |<DNS  id=25558 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='p26-caldav.icloud.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=67 id=63970 flags= frag=0 ttl=255 proto=udp chksum=0x125d src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53753 dport=domain len=47 chksum=0xc0d5 |<DNS  id=14826 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=51225 flags= frag=0 ttl=255 proto=udp chksum=0x4411 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=62165 dport=domain len=68 chksum=0xe973 |<DNS  id=33531 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=32 id=56889 flags= frag=0 ttl=64 proto=udp chksum=0x4212 src=172.24.1.80 dst=172.24.1.1 options=[] |<UDP  sport=49181 dport=192 len=12 chksum=0xd965 |<Raw  load='\x08\x01\x03\x10' |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=65 id=55998 flags= frag=0 ttl=255 proto=udp chksum=0x3183 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=54539 dport=domain len=45 chksum=0x92d3 |<DNS  id=58688 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='pd.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=56134 flags= frag=0 ttl=255 proto=udp chksum=0x31e5 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=62165 dport=domain len=68 chksum=0xea74 |<DNS  id=33531 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=61868 flags= frag=0 ttl=255 proto=udp chksum=0x1a8f src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=52917 dport=domain len=51 chksum=0x77a5 |<DNS  id=51967 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=ff:ff:ff:ff:ff:ff src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=78 id=9310 flags= frag=0 ttl=64 proto=udp chksum=0xfac1 src=172.24.1.80 dst=172.24.1.255 options=[] |<UDP  sport=netbios_ns dport=netbios_ns len=58 chksum=0xb401 |<NBNSQueryRequest  NAME_TRN_ID=17768 FLAGS=272 QDCOUNT=1 ANCOUNT=0 NSCOUNT=0 ARCOUNT=0 QUESTION_NAME='\x01\x02__MSBROWSE__\x02' SUFFIX=16706 NULL=0 QUESTION_TYPE=NB QUESTION_CLASS=INTERNET |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=56260 flags= frag=0 ttl=255 proto=udp chksum=0x3178 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=52917 dport=domain len=51 chksum=0x78a6 |<DNS  id=51967 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=84 id=13554 flags= frag=0 ttl=64 proto=icmp chksum=0x883f src=172.24.1.80 dst=8.8.8.8 options=[] |<ICMP  type=echo-request code=0 chksum=0x567 id=0x3205 seq=0x0 |<Raw  load='\\\x1aI\x93\x00\x01/\xe2\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567' |>>>>
+
+
+<Ether  dst=33:33:00:00:00:fb src=e0:f8:47:2c:ff:16 type=0x86dd |<IPv6  version=6 tc=0 fl=24416 plen=402 nh=UDP hlim=255 src=fe80::c35:c6f8:6356:bef4 dst=ff02::fb |<UDP  sport=mdns dport=mdns len=402 chksum=0x2119 |<DNS  id=0 qr=0 opcode=QUERY aa=0 tc=0 rd=0 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=23 ancount=0 nscount=0 arcount=1 qd=<DNSQR  qname='_airplay._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_raop._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_uscan._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_uscans._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ippusb._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_scanner._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ipp._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ipps._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_printer._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_pdl-datastream._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ptp._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_airport._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_daap._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_touch-remote._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_airplay._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_raop._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_apple-mobdev._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='92c907f1._sub._apple-mobdev2._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_apple-pairable._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_afpovertcp._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_smb._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_rfb._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_adisk._tcp.local.' qtype=PTR qclass=IN |>>>>>>>>>>>>>>>>>>>>>>> an=None ns=None ar=<DNSRROPT  rrname='.' type=OPT rclass=1440 extrcode=0 version=0 z=4500 rdlen=18 rdata=[<EDNS0TLV  optcode=Reserved optlen=14 optdata='\x00\x01\xc8*\x14\x10\x13\x86\xe0\xf8G,\xff\x16' |>] |> |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=84 id=33973 flags= frag=0 ttl=64 proto=icmp chksum=0x387c src=172.24.1.80 dst=8.8.8.8 options=[] |<ICMP  type=echo-request code=0 chksum=0xdb82 id=0x3205 seq=0x3 |<Raw  load='\\\x1aI\x96\x00\x01Y\xc0\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567' |>>>>
+
+
+<Ether  dst=e0:f8:47:2c:ff:16 src=50:2b:73:e4:4e:80 type=0x806 |<ARP  hwtype=0x1 ptype=0x800 hwlen=6 plen=4 op=who-has hwsrc=50:2b:73:e4:4e:80 psrc=172.24.1.1 hwdst=00:00:00:00:00:00 pdst=172.24.1.80 |>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=65 id=43334 flags= frag=0 ttl=255 proto=udp chksum=0x62fb src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=54539 dport=domain len=45 chksum=0x92d3 |<DNS  id=58688 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='pd.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=31094 flags= frag=0 ttl=255 proto=udp chksum=0x92bb src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=63128 dport=domain len=61 chksum=0x43c5 |<DNS  id=33702 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=32 id=10166 flags= frag=0 ttl=64 proto=udp chksum=0xf895 src=172.24.1.80 dst=172.24.1.1 options=[] |<UDP  sport=49181 dport=192 len=12 chksum=0xd965 |<Raw  load='\x08\x01\x03\x10' |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=25968 flags= frag=0 ttl=255 proto=udp chksum=0xa6c1 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=63128 dport=domain len=61 chksum=0x43c5 |<DNS  id=33702 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=46883 flags= frag=0 ttl=255 proto=udp chksum=0x5619 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=54592 dport=domain len=51 chksum=0xc4a1 |<DNS  id=30841 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=21750 flags= frag=0 ttl=255 proto=udp chksum=0xb745 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=54592 dport=domain len=51 chksum=0xc3a0 |<DNS  id=30841 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=50077 flags= frag=0 ttl=255 proto=udp chksum=0x499f src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=54592 dport=domain len=51 chksum=0xc4a1 |<DNS  id=30841 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=87 id=39783 flags= frag=0 ttl=255 proto=udp chksum=0x71c5 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=58143 dport=domain len=67 chksum=0x91ab |<DNS  id=359 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='lb._dns-sd._udp.0.56.168.192.in-addr.arpa.' qtype=PTR qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=10463 flags= frag=0 ttl=255 proto=udp chksum=0xe45d src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=54592 dport=domain len=51 chksum=0xc4a1 |<DNS  id=30841 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=67 id=10642 flags= frag=0 ttl=255 proto=udp chksum=0xe3ae src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=57486 dport=domain len=47 chksum=0xa5a6 |<DNS  id=25558 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='p26-caldav.icloud.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=10045 flags= frag=0 ttl=255 proto=udp chksum=0xe5ee src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53980 dport=domain len=68 chksum=0xe2a0 |<DNS  id=43720 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=61 id=39674 flags= frag=0 ttl=255 proto=udp chksum=0x714b src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=52486 dport=domain len=41 chksum=0x8cb6 |<DNS  id=47030 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='www.youtube.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=14533 flags= frag=0 ttl=255 proto=udp chksum=0xd365 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53980 dport=domain len=68 chksum=0xe19f |<DNS  id=43720 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=65 id=32446 flags= frag=0 ttl=255 proto=udp chksum=0x8e84 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=54539 dport=domain len=45 chksum=0x93d4 |<DNS  id=58688 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='pd.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=23614 flags= frag=0 ttl=255 proto=udp chksum=0xb0fe src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=61056 dport=domain len=51 chksum=0xfa71 |<DNS  id=13669 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='38-courier.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=6703 flags= frag=0 ttl=255 proto=udp chksum=0xf2fc src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53980 dport=domain len=68 chksum=0xe2a0 |<DNS  id=43720 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=50713 flags= frag=0 ttl=255 proto=udp chksum=0x4622 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=61056 dport=domain len=51 chksum=0xf970 |<DNS  id=13669 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='38-courier.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=17181 flags= frag=0 ttl=255 proto=udp chksum=0xc914 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=57163 dport=domain len=61 chksum=0x82ad |<DNS  id=23563 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=58025 flags= frag=0 ttl=255 proto=udp chksum=0x2a89 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=57163 dport=domain len=61 chksum=0x83ae |<DNS  id=23563 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=18585 flags= frag=0 ttl=255 proto=udp chksum=0xc4a3 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=61056 dport=domain len=51 chksum=0xfa71 |<DNS  id=13669 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='38-courier.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=14312 flags= frag=0 ttl=255 proto=udp chksum=0xd453 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=61751 dport=domain len=51 chksum=0x3817 |<DNS  id=59403 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=38901 flags= frag=0 ttl=255 proto=udp chksum=0x743c src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=57163 dport=domain len=61 chksum=0x82ad |<DNS  id=23563 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=33423 flags= frag=0 ttl=255 proto=udp chksum=0x8aad src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=61751 dport=domain len=51 chksum=0x3918 |<DNS  id=59403 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=48091 flags= frag=0 ttl=255 proto=udp chksum=0x5150 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=49220 dport=domain len=68 chksum=0x8b12 |<DNS  id=5359 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=32882 flags= frag=0 ttl=255 proto=udp chksum=0x8bb8 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=49220 dport=domain len=68 chksum=0x8a11 |<DNS  id=5359 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=11964 flags= frag=0 ttl=255 proto=udp chksum=0xdd7f src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=61751 dport=domain len=51 chksum=0x3817 |<DNS  id=59403 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=84 id=13057 flags= frag=0 ttl=64 proto=icmp chksum=0x8a30 src=172.24.1.80 dst=8.8.8.8 options=[] |<ICMP  type=echo-request code=0 chksum=0x22c0 id=0x7c05 seq=0x0 |<Raw  load='\\\x1aI\xd3\x00\x07\xc8B\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567' |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=52793 flags= frag=0 ttl=255 proto=udp chksum=0x3ef2 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=49220 dport=domain len=68 chksum=0x8b12 |<DNS  id=5359 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=84 id=17669 flags= frag=0 ttl=64 proto=icmp chksum=0x782c src=172.24.1.80 dst=8.8.8.8 options=[] |<ICMP  type=echo-request code=0 chksum=0xfbad id=0x7c05 seq=0x3 |<Raw  load='\\\x1aI\xd6\x00\x07\xefN\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567' |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=84 id=32465 flags= frag=0 ttl=64 proto=icmp chksum=0x3e60 src=172.24.1.80 dst=8.8.8.8 options=[] |<ICMP  type=echo-request code=0 chksum=0xee98 id=0x7c05 seq=0x4 |<Raw  load='\\\x1aI\xd7\x00\x07\xfca\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567' |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=37213 flags= frag=0 ttl=255 proto=udp chksum=0x7bdf src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=61751 dport=domain len=51 chksum=0x3918 |<DNS  id=59403 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=43880 flags= frag=0 ttl=255 proto=udp chksum=0x60c9 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=54015 dport=domain len=61 chksum=0x89e1 |<DNS  id=24867 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=84 id=28930 flags= frag=0 ttl=64 proto=icmp chksum=0x4c2f src=172.24.1.80 dst=8.8.8.8 options=[] |<ICMP  type=echo-request code=0 chksum=0xb76d id=0x7c05 seq=0x8 |<Raw  load='\\\x1aI\xdb\x00\x083\x84\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567' |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=33 flags= frag=0 ttl=255 proto=udp chksum=0xd12 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=54015 dport=domain len=61 chksum=0x8ae2 |<DNS  id=24867 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=84 id=6073 flags= frag=0 ttl=64 proto=icmp chksum=0xa578 src=172.24.1.80 dst=8.8.8.8 options=[] |<ICMP  type=echo-request code=0 chksum=0x943d id=0x7c05 seq=0xb |<Raw  load='\\\x1aI\xde\x00\x08V\xae\x08\t\n\x0b\x0c\r\x0e\x0f\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1a\x1b\x1c\x1d\x1e\x1f !"#$%&\'()*+,-./01234567' |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=47461 flags= frag=0 ttl=255 proto=udp chksum=0x53d7 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=50367 dport=domain len=51 chksum=0x8330 |<DNS  id=51819 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=14684 flags= frag=0 ttl=255 proto=udp chksum=0xd3d6 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=54015 dport=domain len=61 chksum=0x8ae2 |<DNS  id=24867 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=64487 flags= frag=0 ttl=255 proto=udp chksum=0x1054 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=50367 dport=domain len=51 chksum=0x822f |<DNS  id=51819 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=48626 flags= frag=0 ttl=255 proto=udp chksum=0x4e38 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=56691 dport=domain len=68 chksum=0xa3a3 |<DNS  id=56877 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=33:33:00:00:00:fb src=e0:f8:47:2c:ff:16 type=0x86dd |<IPv6  version=6 tc=0 fl=24416 plen=373 nh=UDP hlim=255 src=fe80::c35:c6f8:6356:bef4 dst=ff02::fb |<UDP  sport=mdns dport=mdns len=373 chksum=0x4fd3 |<DNS  id=0 qr=0 opcode=QUERY aa=0 tc=0 rd=0 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=23 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='_airplay._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_raop._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_uscan._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_uscans._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ippusb._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_scanner._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ipp._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ipps._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_printer._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_pdl-datastream._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_ptp._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_airport._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_daap._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_touch-remote._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_airplay._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_raop._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_apple-mobdev._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='92c907f1._sub._apple-mobdev2._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_apple-pairable._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_afpovertcp._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_smb._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_rfb._tcp.local.' qtype=PTR qclass=IN |<DNSQR  qname='_adisk._tcp.local.' qtype=PTR qclass=IN |>>>>>>>>>>>>>>>>>>>>>>> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=55149 flags= frag=0 ttl=255 proto=udp chksum=0x35be src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=56691 dport=domain len=68 chksum=0xa4a4 |<DNS  id=56877 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=24760 flags= frag=0 ttl=255 proto=udp chksum=0xab72 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=56691 dport=domain len=68 chksum=0xa3a3 |<DNS  id=56877 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x806 |<ARP  hwtype=0x1 ptype=0x800 hwlen=6 plen=4 op=who-has hwsrc=e0:f8:47:2c:ff:16 psrc=172.24.1.80 hwdst=50:2b:73:e4:4e:80 pdst=172.24.1.1 |>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=59 id=6183 flags= frag=0 ttl=255 proto=udp chksum=0xf420 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=54843 dport=domain len=39 chksum=0x1fdb |<DNS  id=34547 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='www.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=48719 flags= frag=0 ttl=255 proto=udp chksum=0x4de2 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53094 dport=domain len=61 chksum=0xd29e |<DNS  id=7167 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=15077 flags= frag=0 ttl=255 proto=udp chksum=0xd156 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=50367 dport=domain len=51 chksum=0x822f |<DNS  id=51819 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=22243 flags= frag=0 ttl=255 proto=udp chksum=0xb64f src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53094 dport=domain len=61 chksum=0xd39f |<DNS  id=7167 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=61847 flags= frag=0 ttl=255 proto=udp chksum=0x1ba5 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=65525 dport=domain len=51 chksum=0x37bd |<DNS  id=59814 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='15-courier.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=61 id=58297 flags= frag=0 ttl=255 proto=udp chksum=0x288c src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=52486 dport=domain len=41 chksum=0x8cb6 |<DNS  id=47030 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='www.youtube.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=29201 flags= frag=0 ttl=255 proto=udp chksum=0x9a2a src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=65525 dport=domain len=51 chksum=0x36bc |<DNS  id=59814 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='15-courier.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=70 id=24941 flags= frag=0 ttl=255 proto=udp chksum=0xaacf src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=63081 dport=domain len=50 chksum=0x8891 |<DNS  id=35799 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='p60-buy.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=21477 flags= frag=0 ttl=255 proto=udp chksum=0xb957 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=65525 dport=domain len=51 chksum=0x37bd |<DNS  id=59814 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='15-courier.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=42323 flags= frag=0 ttl=255 proto=udp chksum=0x67d8 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53165 dport=domain len=68 chksum=0xb1e6 |<DNS  id=57009 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=9862 flags= frag=0 ttl=255 proto=udp chksum=0xe5a4 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53165 dport=domain len=68 chksum=0xb0e5 |<DNS  id=57009 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=44529 flags= frag=0 ttl=255 proto=udp chksum=0x5e4a src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53511 dport=domain len=51 chksum=0x16a7 |<DNS  id=10668 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=8913 flags= frag=0 ttl=255 proto=udp chksum=0xea6b src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53511 dport=domain len=51 chksum=0x17a8 |<DNS  id=10668 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=58951 flags= frag=0 ttl=255 proto=udp chksum=0x26e4 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53165 dport=domain len=68 chksum=0xb1e6 |<DNS  id=57009 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=39598 flags= frag=0 ttl=255 proto=udp chksum=0x718d src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53511 dport=domain len=51 chksum=0x16a7 |<DNS  id=10668 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=4848 flags= frag=0 ttl=255 proto=udp chksum=0xf941 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=62170 dport=domain len=61 chksum=0x943e |<DNS  id=14059 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=16515 flags= frag=0 ttl=255 proto=udp chksum=0xccaf src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=62170 dport=domain len=61 chksum=0x953f |<DNS  id=14059 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=60 id=22461 flags= frag=0 ttl=255 proto=udp chksum=0xb58a src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53637 dport=domain len=40 chksum=0xf50c |<DNS  id=23426 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='api.segment.io.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=22484 flags= frag=0 ttl=255 proto=udp chksum=0xb45d src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=62170 dport=domain len=61 chksum=0x943e |<DNS  id=14059 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=60 id=11726 flags= frag=0 ttl=255 proto=udp chksum=0xde78 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53637 dport=domain len=40 chksum=0xf40b |<DNS  id=23426 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='api.segment.io.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=70 id=16939 flags= frag=0 ttl=255 proto=udp chksum=0xcb12 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=63081 dport=domain len=50 chksum=0x8992 |<DNS  id=35799 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='p60-buy.itunes.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=25105 flags= frag=0 ttl=255 proto=udp chksum=0xab2b src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53511 dport=domain len=51 chksum=0x17a8 |<DNS  id=10668 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=15744 flags= frag=0 ttl=255 proto=udp chksum=0xcfab src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=60332 dport=domain len=68 chksum=0x7611 |<DNS  id=65159 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=60 id=30316 flags= frag=0 ttl=255 proto=udp chksum=0x96db src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53637 dport=domain len=40 chksum=0xf50c |<DNS  id=23426 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='api.segment.io.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=88 id=53512 flags= frag=0 ttl=255 proto=udp chksum=0x3b22 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=60332 dport=domain len=68 chksum=0x7510 |<DNS  id=65159 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-8vq54voxbi5o5-5jjl.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=66 id=57462 flags= frag=0 ttl=255 proto=udp chksum=0x2bca src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53693 dport=domain len=46 chksum=0x4ea5 |<DNS  id=2648 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='time-macos.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=69 id=5836 flags= frag=0 ttl=255 proto=udp chksum=0xf571 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=60708 dport=domain len=49 chksum=0xcb30 |<DNS  id=40613 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='configuration.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=66 id=5106 flags= frag=0 ttl=255 proto=udp chksum=0xf94f src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53693 dport=domain len=46 chksum=0x4fa6 |<DNS  id=2648 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='time-macos.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=69 id=27026 flags= frag=0 ttl=255 proto=udp chksum=0xa3ac src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=60708 dport=domain len=49 chksum=0xcc31 |<DNS  id=40613 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='configuration.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=47171 flags= frag=0 ttl=255 proto=udp chksum=0x53f8 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=62186 dport=domain len=51 chksum=0x71a8 |<DNS  id=44231 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=81 id=46011 flags= frag=0 ttl=255 proto=udp chksum=0x5876 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=63287 dport=domain len=61 chksum=0x6d69 |<DNS  id=22883 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-bvvbax-5jje.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=5026 flags= frag=0 ttl=255 proto=udp chksum=0xf99a src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=62186 dport=domain len=51 chksum=0x72a9 |<DNS  id=44231 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=66 id=33438 flags= frag=0 ttl=255 proto=udp chksum=0x89a2 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53693 dport=domain len=46 chksum=0x4ea5 |<DNS  id=2648 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='time-macos.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=52618 flags= frag=0 ttl=255 proto=udp chksum=0x3eb1 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=62186 dport=domain len=51 chksum=0x71a8 |<DNS  id=44231 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=59 id=51594 flags= frag=0 ttl=255 proto=udp chksum=0x42bd src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=62986 dport=domain len=39 chksum=0x4b1e |<DNS  id=16391 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='gsa.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=39772 flags= frag=0 ttl=255 proto=udp chksum=0x70df src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=62186 dport=domain len=51 chksum=0x71a8 |<DNS  id=44231 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=66 id=59657 flags= frag=0 ttl=255 proto=udp chksum=0x2438 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53693 dport=domain len=46 chksum=0x4fa6 |<DNS  id=2648 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='time-macos.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=78 id=62744 flags= frag=0 ttl=255 proto=udp chksum=0x181d src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53736 dport=domain len=58 chksum=0x1b3a |<DNS  id=10111 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-aigzrn7z.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=60 id=46370 flags= frag=0 ttl=255 proto=udp chksum=0x5724 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53637 dport=domain len=40 chksum=0xf40b |<DNS  id=23426 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='api.segment.io.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=78 id=25342 flags= frag=0 ttl=255 proto=udp chksum=0xa936 src=172.24.1.80 dst=1.1.1.1 options=[] |<UDP  sport=53736 dport=domain len=58 chksum=0x1a39 |<DNS  id=10111 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-aigzrn7z.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=7380 flags= frag=0 ttl=255 proto=udp chksum=0xf068 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=62186 dport=domain len=51 chksum=0x72a9 |<DNS  id=44231 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='init-p01st.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=71 id=46621 flags= frag=0 ttl=255 proto=udp chksum=0x571f src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=60399 dport=domain len=51 chksum=0x644d |<DNS  id=52762 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='38-courier.push.apple.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=50:2b:73:e4:4e:80 src=e0:f8:47:2c:ff:16 type=0x800 |<IP  version=4 ihl=5 tos=0x0 len=78 id=49774 flags= frag=0 ttl=255 proto=udp chksum=0x4ac7 src=172.24.1.80 dst=1.0.0.1 options=[] |<UDP  sport=53736 dport=domain len=58 chksum=0x1b3a |<DNS  id=10111 qr=0 opcode=QUERY aa=0 tc=0 rd=1 ra=0 z=0 ad=0 cd=0 rcode=ok qdcount=1 ancount=0 nscount=0 arcount=0 qd=<DNSQR  qname='r3---sn-aigzrn7z.googlevideo.com.' qtype=A qclass=IN |> an=None ns=None ar=None |>>>>
+
+
+<Ether  dst=33:33:00:00:00:02 src=50:2b:73:e4:4e:80 type=0x86dd |<IPv6  version=6 tc=0 fl=0 plen=16 nh=ICMPv6 hlim=255 src=fe80::522b:73ff:fee4:4e80 dst=ff02::2 |<ICMPv6ND_RS  type=Router Solicitation code=0 cksum=0x560e res=0 |<ICMPv6NDOptSrcLLAddr  type=1 len=1 lladdr=50:2b:73:e4:4e:80 |>>>>
+
