@@ -26,8 +26,22 @@ def updateKeys():
     l.success("Priv/Pub Keys updated")
 
 
+def addAuth(status, time):
+    db = init()
+    cursor = db.cursor()
+    cursor.execute("insert into auth(status, time) values(?, ?)", (status, time))
+    db.commit()
+    l.default("Added auth data")
+
 def getKeys():
     db = init()
     cursor = db.cursor()
     cursor.execute("select * from keys limit 1")
     return cursor.fetchone()
+
+
+def addCPU(percent):
+    db = init()
+    cursor = db.cursor()
+    cursor.execute("insert into cpu(percent) values(?)", (percent,))
+    db.commit()

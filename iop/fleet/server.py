@@ -14,6 +14,9 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 import logger as l
 import fx
+from binascii import hexlify, unhexlify
+import func
+
 
 # Socket defaults
 sio = socketio.Server()
@@ -55,6 +58,20 @@ def offline(sid, data):
 
 @sio.on(str(db.getDevId()))
 def auth(sid, data):
+    # decrypting data
+    keys = db.getKeys()
+    data['status'] = func.decrypt(keys['privKey'], unhexlify(data['status']))
+    data['time'] = func.decrypt(keys['privKey'], unhexlify(data['time']))
+    
+    # update status
+    db.updateStatus(data['devId'], data['status'])
+
+    # encrypting data
+    deviceInfo = db.getDeviceInfo(str(data['devId']))
+    data['status'] = hexlify(func.encrypt(str(deviceInfo['pubKey']), data['status']))
+    data['time'] = hexlify(func.encrypt(str(deviceInfo['pubKey']), data['time']))
+     
+          
     sio.emit(str(data['devId']), data)
 
 if __name__ == "__main__":

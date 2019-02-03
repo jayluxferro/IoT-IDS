@@ -40,5 +40,19 @@ def getDeviceInfo(devId):
     return cursor.fetchone()
 
 
+def updateStatus(devId, status):
+    db = init()
+    cursor = db.cursor()
+    cursor.execute("update devices set status=? where devId=?", (devId, status))
+    db.commit()
+    l.warning('Updated IoT Device status')
+
 def getDevId():
     return devId
+
+
+def getKeys():
+    db = init()
+    cursor = db.cursor()
+    cursor.execute("select * from keys limit 1")
+    return cursor.fetchone()

@@ -11,6 +11,9 @@ import db
 import socketio
 reload(sys)
 sys.setdefaultencoding('utf8')
+from binascii import hexlify, unhexlify
+import time
+
 
 # Defaults
 sio = socketio.Client()
@@ -19,19 +22,23 @@ keys = db.getKeys()
 
 @sio.on('connect')
 def on_connect():
-    print('connection established')
+    l.success('connection established')
     sio.emit('online', {'devId': deviceId})
     # register deviceId
     #sio.emit('register', {'devId': deviceId, 'pubKey': keys['pubKey']})
 
 @sio.on(str(deviceId))
 def on_message(data):
-    print('message received with {0}'.format(data))
+    keys = db.getKeys()
+    data['status'] = func.decrypt(keys['privKey'], unhexlify(data['status']))
+    data['time'] = func.decrypt(keys['privKey'], unhexlify(data['time']))
     #sio.emit('my response', {'response': 'my response'})
+    db.addAuth(data['status'], float(time.time() - float(data['time'])))
+    l.warning('message received with {0}'.format(data))
 
 @sio.on('disconnect')
 def on_disconnect():
-    print('disconnected from server')
+    l.error('disconnected from server')
     sio.emit('offline', {'deviceId': deviceId})
     initialize()
 
