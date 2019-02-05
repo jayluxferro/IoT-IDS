@@ -45,3 +45,15 @@ def addCPU(percent):
     cursor = db.cursor()
     cursor.execute("insert into cpu(percent) values(?)", (percent,))
     db.commit()
+
+def getCPU():
+    db = init()
+    cursor = db.cursor()
+    cursor.execute("select * from cpu")
+    return cursor.fetchall()
+
+def getRevocation(status):
+    db = init()
+    cursor = db.cursor()
+    cursor.execute("select * from auth where status=?", (status,))
+    return cursor.fetchall()

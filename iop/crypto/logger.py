@@ -1,7 +1,7 @@
 #!/usr/bin/python
 """
 Author: Jay Lux Ferro
-Description: Logging 
+Description: Logging
 Date: 29th Dec 2018
 """
 
@@ -12,25 +12,32 @@ WARNING = '\033[93m'
 FAIL = '\033[91m'
 ENDC = '\033[0m'
 BOLD = '\033[1m'
-UNDERLINE = '\033[4m'		
+UNDERLINE = '\033[4m'
+
 
 def header(text):
-	print(HEADER + text + ENDC)
+    print(HEADER + text + ENDC)
+
 
 def default(text):
-	print(OKBLUE + text + ENDC)
+    print(OKBLUE + text + ENDC)
+
 
 def success(text):
-	print(OKGREEN + text + ENDC)
+    print(OKGREEN + text + ENDC)
+
 
 def warning(text):
-	print(WARNING + text + ENDC)
+    print(WARNING + text + ENDC)
+
 
 def error(text):
-	print(FAIL + text + ENDC)
+    print(FAIL + text + ENDC)
+
 
 def bold(text):
-	print(BOLD + text + ENDC)
+    print(BOLD + text + ENDC)
+
 
 def underline(text):
-	print(UNDERLINE + text + ENDC)
+    print(UNDERLINE + text + ENDC)
