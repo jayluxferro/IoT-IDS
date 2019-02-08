@@ -1,0 +1,3 @@
+scapy
+python-socketio[client]
+eventlet

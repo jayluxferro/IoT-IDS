@@ -1,25 +1,15 @@
 #!/usr/bin/python
-
-'''
-Author: Jay Lux Ferro
-Date:  25th Jan 2019
-ICMP, SYN and UDP packet analysis
-'''
-
+"""
+SYN packet analyzer
+Date: 28th Jan 2019
+"""
 from scapy.all import *
 import pprint
+import db
 
-from scapy.all import *
-import pprint
-
-synFlood = rdpcap('syn_flood2.pcap')
-
-
-for x in range(100, 110):
-    pprint.pprint(synFlood[x])
-    print('\n')
-
-
-# dumping only one format
-synFlood[100].psdump('syn_packet')
-
+def process(pkt):
+    pprint.pprint(pkt)
+    tcp = pkt.getlayer(TCP)
+    ip = pkt.getlayer(IP)
+    ether = pkt.getlayer(Ether)
+    db.addP(ether.src, ether.dst, ip.src, ip.dst, tcp.sport, tcp.dport, "tcp")

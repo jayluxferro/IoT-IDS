@@ -1,18 +1,17 @@
 #!/usr/bin/python
-
-'''
-Author: Jay Lux Ferro
-Date:  25th Jan 2019
-ICMP packet analysis
-'''
-
+"""
+ICMP Packet analyzer
+Date: 28 Jan 2019
+"""
 from scapy.all import *
 import pprint
+import db
 
-icmpFlood = rdpcap('icmp_flood2.pcap')
+def process(pkt):
+    pprint.pprint(pkt) 
+    ip = pkt.getlayer(IP)
+    ether = pkt.getlayer(Ether)
+    db.addP(ether.src, ether.dst, ip.src, ip.dst, "", "", "icmp")
 
-# icmpFlood.show()
-for x in range(100, 110):
-    pprint.pprint(icmpFlood[x])
-
-icmpFlood[100].psdump('icmp_packet')
+def detect():
+    pass
