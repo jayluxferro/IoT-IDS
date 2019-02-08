@@ -45,3 +45,9 @@ plt.xlabel('Key Length')
 plt.ylabel('Average Computational Time (s)')
 plt.grid(True)
 plt.show()
+
+# checking average time
+print("Avg. rsa {0}".format(str(np.average(rsa[:3]))))
+
+print("Avg: oaep {0}".format(str(np.average(oaep[:3]))))
+
