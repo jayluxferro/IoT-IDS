@@ -37,6 +37,21 @@ def detect(sid, data):
 ##################################################################
 
 
+## Events
+@sio.on('udp')
+def udp(sid, data):
+    sio.emit('udp_p', data)
+
+@sio.on('tcp')
+def tcp(sid, data):
+    sio.emit('tcp_p', data)
+
+@sio.on('icmp')
+def icmp(sid, data):
+    sio.emit('icmp_p', data)
+
+##################################################################
+
 
 #### Websocket daemon
 if __name__ == '__main__':

@@ -5,7 +5,7 @@ Date:   26 Dec 2018
 """
 
 import socketio
-from scapy.all import sniff
+from scapy.all import *
 import pprint
 from time import sleep
 import sys
@@ -13,6 +13,7 @@ import json
 import logger as d
 import db
 import icmp, syn, udp
+import func
 
 sio = socketio.Client()
 
@@ -50,4 +51,4 @@ if __name__== '__main__':
 
     # sniff for packets
     while True: 
-	    sniff(iface=sys.argv[1], count=1, prn=packetAnalyzer)	
+	    sniff(iface=sys.argv[1], count=1, prn=packetHandler)	

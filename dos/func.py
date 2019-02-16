@@ -24,3 +24,5 @@ def setSubnet(iface):
     mac = sw.splitlines()[1].split(' ')[5]
     db.setSubnet(gw, mac)   
 
+
+

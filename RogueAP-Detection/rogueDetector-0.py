@@ -168,7 +168,7 @@ for ap_info in ap:
     # searching through scanned data
     for data in cells:
         if(data['essid'].strip('\"') == ap_info['essid']):
-            entropy = (-(1.0/14) * math.log(1.0/14, 2)) # for essid
+            entropy = func.lossEntropy() # for essid
             """
             /**
             * @param
@@ -176,40 +176,40 @@ for ap_info in ap:
             */
             """
             if ap_info['group_cipher'] == data['group_cipher']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['protocol'] == data['protocol']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['bssid'] == data['bssid']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['encryption_key'] == data['encryption_key']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['pairwise_ciphers'] == data['pairwise_ciphers']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['frequency'] == data['frequency']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['rsn_ie'] == data['rsn_ie']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['bit_rates'] == data['bit_rates']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['fm'] == data['fm']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['authentication_suites'] == data['authentication_suites']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['channel'] == data['channel']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if ap_info['mode'] == data['mode']:
-                entropy += (-(1.0/14) * math.log(1.0/14, 2))
+                entropy += func.lossEntropy()
 
             if entropy != ap_info['entropy']:
                 execution_time = time.time() - start

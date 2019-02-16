@@ -42,6 +42,12 @@ def getP(table):
     return cursor.fetchall()
 
 
+def config():
+    con = init()
+    cursor = con.cursor()
+    cursor.execute("select * from config limit 1")
+    return cursor.fetchone()
+
 def updatePInterval(proto, ptime):
     con = init()
     cursor = con.cursor()

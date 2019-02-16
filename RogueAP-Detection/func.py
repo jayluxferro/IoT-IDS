@@ -3,6 +3,7 @@
 import os
 import psutil
 import pprint
+import math
 
 
 def get_usage():
@@ -23,3 +24,7 @@ def hex_to_ascii(h):
 
 def get_channel(channel):
     return int(pprint.pformat(channel).split('\\x')[1].split("'")[0], 16)
+
+def lossEntropy():
+    #  number of x'tics = 14
+    return -(1.0/14) * math.log(1.0/14, 2)

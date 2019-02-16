@@ -100,10 +100,10 @@ def packetHandler(pkt):
                     pass
                 else:
                     if xtics['channel'] != channel:
-                        xtics['entropy'] -= (-(1.0/14) * math.log(1.0/14, 2))
+                        xtics['entropy'] -= func.lossEntropy()
           
                     if xtics['bssid'] != bssid:
-                        xtics['entropy'] -= (-(1.0/14) * math.log(1.0/14, 2))
+                        xtics['entropy'] -= func.lossEntropy()
 
 
                     # checking entropy value
