@@ -87,3 +87,16 @@ def get_detections():
 def get_rtt():
     conn = init()
     return conn.cursor().execute("select * from rtt").fetchall()
+
+def setSubnet(ip, mac):
+    db = init()
+    cursor = db.cursor()
+    cursor.execute("update subnet set ip=?, mac=?", (ip,mac))
+    db.commit()
+    d.success('Updated subnet')
+
+def getSubnet():
+    db = init()
+    cursor = db.cursor()
+    cursor.execute("select * from subnet limit 1")
+    return cursor.fetchone()

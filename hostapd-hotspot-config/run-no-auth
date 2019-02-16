@@ -1,5 +1,0 @@
-#!/bin/bash
-./iptables_ipv4.sh
-dnsmasq -C ./dnsmasq.conf
-hostapd ./hostapd.conf
-

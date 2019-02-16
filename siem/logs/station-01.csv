@@ -1,7 +1,0 @@
-
-BSSID, First time seen, Last time seen, channel, Speed, Privacy, Cipher, Authentication, Power, # beacons, # IV, LAN IP, ID-length, ESSID, Key
-50:2B:73:E4:4E:80, 2018-08-18 14:44:49, 2018-08-18 15:24:48, 11, 130, WPA2, CCMP, PSK, -33,     8992,       25,   0.  0.  0.  0,  10, sperixlabs, 
-
-Station MAC, First time seen, Last time seen, Power, # packets, BSSID, Probed ESSIDs
-E8:B4:C8:CC:E2:0D, 2018-08-18 14:45:49, 2018-08-18 14:53:56, -64,      175, 50:2B:73:E4:4E:80,
-

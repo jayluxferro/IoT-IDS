@@ -13,12 +13,15 @@ import json
 import packet
 import logger as d
 import db
+import func
 
 sio = socketio.Client()
 
 def packetAnalyzer(pkt):
     # sending decoded packet info to detection bridge
-    sio.emit('detect', packet.decode(pkt))
+    res = packet.decode(pkt)
+    if res != None:
+        sio.emit('detect', packet.decode(pkt))
 
 def usage():
     print('Usage: python ' + sys.argv[0] + ' <interface>')
@@ -35,6 +38,9 @@ if __name__== '__main__':
     ## Delete arp cache entries
     sio.emit('delete', None)
     db.delete_all('arp')
+
+    ## Setting subnet for interface
+    func.setSubnet(sys.argv[1])
 
     # sniff for ARP packets
     while True: 
