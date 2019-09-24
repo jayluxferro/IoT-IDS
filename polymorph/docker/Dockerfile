@@ -32,8 +32,9 @@ ENV PYTHONIOENCODING=utf8
 RUN set -x \
     && apt-get -yqq update \
     && apt-get clean \
-    && apt-get install -yqq build-essential python-dev libnetfilter-queue-dev tshark tcpdump python3-pip wireshark \
+    && apt-get install -yqq build-essential python-dev libnetfilter-queue-dev tshark tcpdump python3-pip wireshark git python3-scapy \
     && apt install -yqq python3-pip \
+    && pip3 install -U git+https://github.com/kti/python-netfilterqueue \
     && pip3 install --process-dependency-links polymorph
 
 RUN apt-get install -yqq linux-image; exit 0

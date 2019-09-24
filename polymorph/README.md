@@ -16,6 +16,7 @@ After the installation of the dependencies, the framework itself can be installe
 ```
 pip3 install polymorph
 ```
+_\* Problems with Python3.7? Check: [Issue 8](https://github.com/shramos/polymorph/issues/8)_
 
 ## Docker environment
 
@@ -36,8 +37,15 @@ The Polymorph framework is composed of two main interfaces:
  - **Phcli:** It is the command line interface of the Polymorph framework. It is recommended to use for tasks such as modification of simple protocols or execution of previously generated templates.
 
 ## Using the Polymorph main interface
-For examples and documentation please refer to:
+-  The best way to start using Polymorph is through the following example: [Modifying FTP packets in real time to authenticate with any username](https://github.com/shramos/polymorph/wiki/0.-Modifying-FTP-packets-in-real-time)
 
+-  After taking a look at the previous example, it can be interesting to see the following video about how we can modify network packets belonging to the MQTT protocol.
+
+[![Modyfing MQTT network packets in real time](https://img.youtube.com/vi/o9EWMBzURos/0.jpg)](https://www.youtube.com/watch?v=o9EWMBzURos&feature=youtu.be)
+
+For more examples and documentation please refer to:
+
+-   [Polymorph Wiki](https://github.com/shramos/polymorph/wiki)
 -   [English whitepaper](https://github.com/shramos/polymorph/blob/master/doc/whitepaper/whitepaper_english.pdf)
 -   [Spanish whitepaper](https://github.com/shramos/polymorph/blob/master/doc/whitepaper/whitepaper_spanish.pdf)
 -   [Building a Proxy Fuzzer for the MQTT protocol with Polymorph](http://www.shramos.com/2018/04/building-proxy-fuzzer-for-mqtt-protocol.html)
