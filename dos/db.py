@@ -22,23 +22,23 @@ def getSubnet():
     cursor.execute("select * from subnet limit 1")
     return cursor.fetchone()
 
-def addP(srcMac, dstMac, srcIP, dstIP, sport, dport, category):
+def addP(srcMac, dstMac, srcIP, dstIP, sport, dport, category, scenario):
     db = init()
     cursor = db.cursor()
     if category == "icmp":
-        cursor.execute("insert into icmp(srcMac, dstMac, srcIP, dstIP, time) values(?, ?, ?, ?, ?)", (srcMac, dstMac, srcIP, dstIP, time.time()))
+        cursor.execute("insert into icmp(srcMac, dstMac, srcIP, dstIP, time, scenario) values(?, ?, ?, ?, ?, ?)", (srcMac, dstMac, srcIP, dstIP, time.time(), scenario))
     else:
         # udp and tcp
-        cursor.execute("insert into "+ category + "(srcMac, dstMac, srcIP, dstIP, sport, dport, time) values(?, ?, ?, ?, ?, ?, ?)", (srcMac, dstMac, srcIP, dstIP, sport, dport, time.time()))
+        cursor.execute("insert into "+ category + "(srcMac, dstMac, srcIP, dstIP, sport, dport, time, scenario) values(?, ?, ?, ?, ?, ?, ?)", (srcMac, dstMac, srcIP, dstIP, sport, dport, time.time(), scenario))
     db.commit()
     log.default("Added " + category + " Packet details")
     print("\n")
 
 
-def getP(table):
+def getP(table, scenario):
     con = init()
     cursor = con.cursor()
-    cursor.execute("select * from " + str(table) + " order by time")
+    cursor.execute("select * from " + str(table) + " where scenario=? order by time", (scenario))
     return cursor.fetchall()
 
 
@@ -53,4 +53,4 @@ def updatePInterval(proto, ptime):
     cursor = con.cursor()
     cursor.execute("update config set "+ proto +"=?", (ptime,))
     con.commit()
-    log.warning('Updated ' + str(proto) + ' packet interval time')
+

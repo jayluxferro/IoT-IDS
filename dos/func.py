@@ -5,6 +5,7 @@ Functions
 import subprocess
 import logger as log
 import db
+import psutil
 
 def inSubnet(ip):
     subnet = db.getSubnet()['ip'].encode('utf-8')
@@ -25,4 +26,8 @@ def setSubnet(iface):
     db.setSubnet(gw, mac)   
 
 
+def cpu_percent():
+    return psutil.cpu_percent() # default value is already a percentage
 
+def memory_percent():
+    return None

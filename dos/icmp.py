@@ -7,11 +7,11 @@ from scapy.all import *
 import pprint
 import db
 
-def process(pkt):
+def process(pkt, scenario):
     pprint.pprint(pkt) 
     ip = pkt.getlayer(IP)
     ether = pkt.getlayer(Ether)
-    db.addP(ether.src, ether.dst, ip.src, ip.dst, "", "", "icmp")
+    db.addP(ether.src, ether.dst, ip.src, ip.dst, "", "", "icmp", scenario)
 
 def detect():
     pass

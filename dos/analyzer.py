@@ -19,24 +19,26 @@ sio = socketio.Client()
 
 def packetHandler(pkt):
     global mac
+    global scenario
+
     if pkt.haslayer(IP):
         ip = pkt.getlayer(IP)
         ether = pkt.getlayer(Ether)
         if ip.dst != None and func.inSubnet(ip.dst) and ether.src != mac: # removing data from AP
             if pkt.lastlayer().haslayer(ICMP):
-                icmp.process(pkt)
+                icmp.process(pkt, scenario)
 
             if pkt.lastlayer().haslayer(UDP):
-                udp.process(pkt)
+                udp.process(pkt, scenario)
 
             if pkt.lastlayer().haslayer(TCP):
-                syn.process(pkt)
+                syn.process(pkt, scenario)
 
 def usage():
-    print('Usage: python ' + sys.argv[0] + ' <interface>')
+    print('Usage: python ' + sys.argv[0] + ' <interface> <scenario>')
 
 if __name__== '__main__':
-    if len(sys.argv) != 2:
+    if len(sys.argv) != 3:
         usage()
         sys.exit(1)
 
@@ -46,7 +48,9 @@ if __name__== '__main__':
     
     func.setSubnet(sys.argv[1])
     global mac
-    
+    global scenario
+
+    scenario = sys.argv[2]
     mac = db.getSubnet()['mac']
 
     # sniff for packets
