@@ -29,18 +29,24 @@ def addP(srcMac, dstMac, srcIP, dstIP, sport, dport, category, scenario):
         cursor.execute("insert into icmp(srcMac, dstMac, srcIP, dstIP, time, scenario) values(?, ?, ?, ?, ?, ?)", (srcMac, dstMac, srcIP, dstIP, time.time(), scenario))
     else:
         # udp and tcp
-        cursor.execute("insert into "+ category + "(srcMac, dstMac, srcIP, dstIP, sport, dport, time, scenario) values(?, ?, ?, ?, ?, ?, ?)", (srcMac, dstMac, srcIP, dstIP, sport, dport, time.time(), scenario))
+        cursor.execute("insert into "+ category + "(srcMac, dstMac, srcIP, dstIP, sport, dport, time, scenario) values(?, ?, ?, ?, ?, ?, ?, ?)", (srcMac, dstMac, srcIP, dstIP, sport, dport, time.time(), scenario))
     db.commit()
     log.default("Added " + category + " Packet details")
     print("\n")
 
 
-def getP(table, scenario):
+def getP(table):
     con = init()
     cursor = con.cursor()
-    cursor.execute("select * from " + str(table) + " where scenario=? order by time", (scenario))
+    cursor.execute("select * from " + str(table) + " order by time")
     return cursor.fetchall()
 
+
+def getPS(table, scenario):
+    con = init()
+    cursor = con.cursor()
+    cursor.execute("select * from " + str(table) + " where scenario=? order by time", (scenario,))
+    return cursor.fetchall()
 
 def config():
     con = init()
