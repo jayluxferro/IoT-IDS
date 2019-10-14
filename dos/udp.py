@@ -8,9 +8,9 @@ from scapy.all import *
 import pprint
 import db
 
-def process(pkt, scenario):
+def process(pkt, scenario, node):
     pprint.pprint(pkt)
     ip = pkt.getlayer(IP)
     ether = pkt.getlayer(Ether)
     udp = pkt.getlayer(UDP)
-    db.addP(ether.src, ether.dst, ip.src, ip.dst, udp.sport, udp.dport, "udp", scenario) 
+    db.addP(ether.src, ether.dst, ip.src, ip.dst, udp.sport, udp.dport, "udp", scenario, node, len(pkt)) 

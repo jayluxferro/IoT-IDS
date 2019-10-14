@@ -3,6 +3,7 @@
 import logger as log
 import sqlite3
 import time
+import func
 
 def init():
     conn = sqlite3.connect('test.db')
@@ -22,14 +23,28 @@ def getSubnet():
     cursor.execute("select * from subnet limit 1")
     return cursor.fetchone()
 
-def addP(srcMac, dstMac, srcIP, dstIP, sport, dport, category, scenario):
+def addCPU(node):
     db = init()
     cursor = db.cursor()
+    cursor.execute("insert into cpu(usage, node) values(?, ?)", (func.cpu_percent(), node))
+    db.commit()
+
+def addP(srcMac, dstMac, srcIP, dstIP, sport, dport, category, scenario, node, psize):
+    db = init()
+    cursor = db.cursor()
+    additionalParams = list(func.getAdditionalParams())
     if category == "icmp":
-        cursor.execute("insert into icmp(srcMac, dstMac, srcIP, dstIP, time, scenario) values(?, ?, ?, ?, ?, ?)", (srcMac, dstMac, srcIP, dstIP, time.time(), scenario))
+        params = [srcMac, dstMac, srcIP, dstIP, time.time(), scenario, node, psize]
+        
+        for _ in additionalParams: params.append(_)
+
+        cursor.execute("insert into icmp(srcMac, dstMac, srcIP, dstIP, time, scenario, node, psize, freq_c, freq_min, freq_max, cpu_percent, ctx_switches, interrupts, soft_interrupts, syscalls, mtu, battery, fan, temp_c, temp_h, temp_crit, swap_t, swap_u, swap_f, swap_p, mem_t, mem_a, mem_p, mem_u, mem_f) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", tuple(params))
     else:
         # udp and tcp
-        cursor.execute("insert into "+ category + "(srcMac, dstMac, srcIP, dstIP, sport, dport, time, scenario) values(?, ?, ?, ?, ?, ?, ?, ?)", (srcMac, dstMac, srcIP, dstIP, sport, dport, time.time(), scenario))
+        params = [srcMac, dstMac, srcIP, dstIP, sport, dport, time.time(), scenario, node, psize]
+        for _ in additionalParams: params.append(_)
+
+        cursor.execute("insert into "+ category + "(srcMac, dstMac, srcIP, dstIP, sport, dport, time, scenario, node, psize, freq_c, freq_min, freq_max, cpu_percent, ctx_switches, interrupts, soft_interrupts, syscalls, mtu, battery, fan, temp_c, temp_h, temp_crit, swap_t, swap_u, swap_f, swap_p, mem_t, mem_a, mem_p, mem_u, mem_f) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", tuple(params))
     db.commit()
     log.default("Added " + category + " Packet details")
     print("\n")

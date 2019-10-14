@@ -86,3 +86,22 @@ def swap_memory():
 def memory():
     data = psutil.virtual_memory()
     return (data.total, data.available, data.percent, data.used, data.free); # in bytes; (total, available, percent, used, free)
+
+
+
+def getAdditionalParams():
+    data = []
+    # freq_c, freq_min, freq_max, cpu_percent, ctx_switches, interrupts, soft_interrupts, syscalls, mtu, battery, fan, temp_c, temp_h, temp_crit, swap_t, swap_u, swap_f, swap_p, mem_t, mem_a, mem_p, mem_u, mem_f
+    for _ in cpu_freq(): data.append(_)
+    data.append(cpu_percent())
+    
+    for _ in cpu_stats(): data.append(_)
+    data.append(mtu())
+    data.append(battery())
+    data.append(fan())
+
+    for _ in temperature(): data.append(_)
+    for _ in swap_memory(): data.append(_)
+    for _ in memory(): data.append(_)
+
+    return tuple(data)
