@@ -92,6 +92,7 @@ def memory():
 def getAdditionalParams():
     data = []
     # freq_c, freq_min, freq_max, cpu_percent, ctx_switches, interrupts, soft_interrupts, syscalls, mtu, battery, fan, temp_c, temp_h, temp_crit, swap_t, swap_u, swap_f, swap_p, mem_t, mem_a, mem_p, mem_u, mem_f
+    # 23 params
     for _ in cpu_freq(): data.append(_)
     data.append(cpu_percent())
     
@@ -105,3 +106,9 @@ def getAdditionalParams():
     for _ in memory(): data.append(_)
 
     return tuple(data)
+
+def trimOutliers(data, iterations):
+    for _ in range(iterations):
+        data.remove(np.max(data))
+
+    return data

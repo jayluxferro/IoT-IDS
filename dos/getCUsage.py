@@ -11,7 +11,10 @@ if len(sys.argv) != 2:
 
 
 node = sys.argv[1]
+for scenario in range(1, 4): # scenario
+    print("Scenario {}".format(scenario))
+    for _ in range(300):
+        db.addCPU(node, scenario)
+        sleep(1)
 
-for _ in range(100):
-    db.addCPU(node)
-    sleep(1)
+    sleep(30)

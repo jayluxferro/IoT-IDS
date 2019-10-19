@@ -23,10 +23,15 @@ def getSubnet():
     cursor.execute("select * from subnet limit 1")
     return cursor.fetchone()
 
-def addCPU(node):
+def addCPU(node, scenario):
     db = init()
     cursor = db.cursor()
-    cursor.execute("insert into cpu(usage, node) values(?, ?)", (func.cpu_percent(), node))
+    params = []
+    params.append(node)
+    params.append(scenario)
+    for _ in func.getAdditionalParams(): params.append(_) 
+
+    cursor.execute("insert into cpu(node, scenario, freq_c, freq_min, freq_max, cpu_percent, ctx_switches, interrupts, soft_interrupts, syscalls, mtu, battery, fan, temp_c, temp_h, temp_crit, swap_t, swap_u, swap_f, swap_p, mem_t, mem_a, mem_p, mem_u, mem_f) values(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", tuple(params))
     db.commit()
 
 def addP(srcMac, dstMac, srcIP, dstIP, sport, dport, category, scenario, node, psize):
@@ -75,3 +80,8 @@ def updatePInterval(proto, ptime):
     cursor.execute("update config set "+ proto +"=?", (ptime,))
     con.commit()
 
+def getCPUData():
+    con = init()
+    cursor = con.cursor()
+    cursor.execute("select * from cpu")
+    return cursor.fetchall()
