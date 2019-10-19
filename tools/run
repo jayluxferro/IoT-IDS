@@ -1,4 +1,4 @@
 #!/bin/bash
 while true; do 
-	node ../siem/cli/aps.js && sleep 5; 
+	node ../wireless-APs-visualizer/cli/aps.js && sleep 5; 
 done

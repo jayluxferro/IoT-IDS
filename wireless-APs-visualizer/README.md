@@ -40,4 +40,4 @@ Finally run the command below to parse the captured data to the Visualizer softw
 ./run
 ```
 
-
+Open browser to http://localhost:1337

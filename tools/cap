@@ -2,5 +2,5 @@
 cat banner.txt
 
 echo 'Dumping wireless data to log file'
-rm -rvf ../siem/logs/aps*
-airodump-ng --output-format csv -I 1 --write ../siem/logs/aps -W -M  mon0
+rm -rvf ../wireless-APs-visualizer/logs/aps*
+airodump-ng --output-format csv -I 1 --write ../wireless-APs-visualizer/logs/aps -W -M  mon0
