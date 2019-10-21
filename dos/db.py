@@ -80,8 +80,8 @@ def updatePInterval(proto, ptime):
     cursor.execute("update config set "+ proto +"=?", (ptime,))
     con.commit()
 
-def getCPUData():
+def getCPUData(node, scenario):
     con = init()
     cursor = con.cursor()
-    cursor.execute("select * from cpu")
+    cursor.execute("select * from cpu where node=? and scenario=?", (node, scenario))
     return cursor.fetchall()
