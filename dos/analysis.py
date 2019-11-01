@@ -398,7 +398,7 @@ plt.figure()
 plt.plot(x, icmpCPU_s3_n1[:minLenCPU], '-o', x, icmpCPU_s3_n2[:minLenCPU], '-o', x, icmpCPU_s3_n3[:minLenCPU], '-o', x, cpuData_n1[2][:minLenCPU], '-o', x, cpuData_n2[2][:minLenCPU], '-o', x, cpuData_n3[2][:minLenCPU], '-o')
 plt.ylabel('CPU Utilization (%)')
 plt.xlabel('Number of Times')
-plt.title('CPU Utilization of nodes in normal and attack mode (ICMP Flood: Random - AFAP)')
+plt.title('CPU Utilization of nodes in normal and attack mode \n(ICMP Flood: Random - AFAP)')
 plt.legend(cpuLegend3)
 
 ## tcp -> cpu -> s1
@@ -436,7 +436,7 @@ plt.figure()
 plt.plot(x, tcpCPU_s3_n1[:minLenCPU], '-o', x, tcpCPU_s3_n2[:minLenCPU], '-o', x, tcpCPU_s3_n3[:minLenCPU], '-o', x, cpuData_n1[2][:minLenCPU], '-o', x, cpuData_n2[2][:minLenCPU], '-o', x, cpuData_n3[2][:minLenCPU], '-o')
 plt.ylabel('CPU Utilization (%)')
 plt.xlabel('Number of Times')
-plt.title('CPU Utilization of nodes in normal and attack mode (TCP Flood: Random - AFAP')
+plt.title('CPU Utilization of nodes in normal and attack mode \n(TCP Flood: Random - AFAP)')
 plt.legend(cpuLegend3)
 
 
@@ -475,7 +475,7 @@ plt.figure()
 plt.plot(x, udpCPU_s3_n1[:minLenCPU], '-o', x, udpCPU_s3_n2[:minLenCPU], '-o', x, udpCPU_s3_n3[:minLenCPU], '-o', x, cpuData_n1[2][:minLenCPU], '-o', x, cpuData_n2[2][:minLenCPU], '-o', x, cpuData_n3[2][:minLenCPU], '-o')
 plt.ylabel('CPU Utilization (%)')
 plt.xlabel('Number of Times')
-plt.title('CPU Utilization of nodes in normal and attack mode (UDP Flood: Random - AFAP')
+plt.title('CPU Utilization of nodes in normal and attack mode \n(UDP Flood: Random - AFAP)')
 plt.legend(cpuLegend3)
 
 # display all graphs 
