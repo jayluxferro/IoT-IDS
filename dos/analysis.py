@@ -478,5 +478,474 @@ plt.xlabel('Number of Times')
 plt.title('CPU Utilization of nodes in normal and attack mode \n(UDP Flood: Random - AFAP)')
 plt.legend(cpuLegend3)
 
+## Memory Utilization
+memData= [[[], [], []], [[], [], []], [[], [], []]] # n1, n2, n3
+
+for scenario in range(1, 4):
+    for node in range(1, 4):
+        for data in db.getCPUData(node, scenario):
+            n = node - 1
+            scn = scenario - 1
+            memData[n][scn].append(data['mem_p'])
+
+
+## Checking the effect of the DoS on Memory
+icmpMem = [ [[], [], []],  [[], [], []], [[], [], []] ] # node [s1, s2, s3]
+tcpMem  = [ [[], [], []],  [[], [], []], [[], [], []] ] # node [s1, s2, s3]
+udpMem  = [ [[], [], []],  [[], [], []], [[], [], []] ] # node [s1, s2, s3]
+
+minLenCPU = 200
+
+for x in scenarios:
+    # icmp
+    for data in db.getPS("icmp", x):
+        node = data['node']
+        scn = data['scenario']
+        icmpMem[node - 1][scn - 1].append(data['mem_p'])
+
+    # tcp
+    for data in db.getPS("tcp", x):
+        node = data['node']
+        scn = data['scenario']
+        tcpMem[node -1 ][scn - 1].append(data['mem_p'])
+
+    # udp
+    for data in db.getPS("udp", x):
+        node = data['node']
+        scn = data['scenario']
+        udpMem[node - 1][scn - 1].append(data['mem_p'])
+
+## icmp -> mem -> s1
+icmpMem_s1_n1 = icmpMem[0][0]
+icmpMem_s1_n2 = icmpMem[1][0]
+icmpMem_s1_n3 = icmpMem[2][0]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, icmpMem_s1_n1[:minLenCPU], '-o', x, icmpMem_s1_n2[:minLenCPU], '-o', x, icmpMem_s1_n3[:minLenCPU], '-o', x, memData[0][0][:minLenCPU], '-o', x, memData[1][0][:minLenCPU], '-o', x, memData[2][0][:minLenCPU], '-o')
+plt.ylabel('Memory Utilization (%)')
+plt.xlabel('Number of Times')
+plt.title('Memory Utilization of nodes in normal and attack mode\n (ICMP Flood: 10pkt/s)')
+plt.legend(cpuLegend3)
+
+## icmp -> mem -> s2
+icmpMem_s2_n1 = icmpMem[0][1]
+icmpMem_s2_n2 = icmpMem[1][1]
+icmpMem_s2_n3 = icmpMem[2][1]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, icmpMem_s2_n1[:minLenCPU], '-o', x, icmpMem_s2_n2[:minLenCPU], '-o', x, icmpMem_s2_n3[:minLenCPU], '-o', x, memData[0][1][:minLenCPU], '-o', x, memData[1][1][:minLenCPU], '-o', x, memData[2][1][:minLenCPU], '-o')
+plt.ylabel('Memory Utilization (%)')
+plt.xlabel('Number of Times')
+plt.title('Memory Utilization of nodes in normal and attack mode\n (ICMP Flood: 100pkt/s)')
+plt.legend(cpuLegend3)
+
+## icmp -> mem -> s3
+icmpMem_s3_n1 = icmpMem[0][2]
+icmpMem_s3_n2 = icmpMem[1][2]
+icmpMem_s3_n3 = icmpMem[2][2]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, icmpMem_s3_n1[:minLenCPU], '-o', x, icmpMem_s3_n2[:minLenCPU], '-o', x, icmpMem_s3_n3[:minLenCPU], '-o', x, memData[0][2][:minLenCPU], '-o', x, memData[1][2][:minLenCPU], '-o', x, memData[2][2][:minLenCPU], '-o')
+plt.ylabel('Memory Utilization (%)')
+plt.xlabel('Number of Times')
+plt.title('Memory Utilization of nodes in normal and attack mode\n (ICMP Flood: Random - AFAP)')
+plt.legend(cpuLegend3)
+
+
+## tcp -> mem -> s1
+tcpMem_s1_n1 = tcpMem[0][0]
+tcpMem_s1_n2 = tcpMem[1][0]
+tcpMem_s1_n3 = tcpMem[2][0]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, tcpMem_s1_n1[:minLenCPU], '-o', x, tcpMem_s1_n2[:minLenCPU], '-o', x, tcpMem_s1_n3[:minLenCPU], '-o', x, memData[0][0][:minLenCPU], '-o', x, memData[1][0][:minLenCPU], '-o', x, memData[2][0][:minLenCPU], '-o')
+plt.ylabel('Memory Utilization (%)')
+plt.xlabel('Number of Times')
+plt.title('Memory Utilization of nodes in normal and attack mode\n (TCP Flood: 10pkt/s)')
+plt.legend(cpuLegend3)
+
+## tcp -> mem -> s2
+tcpMem_s2_n1 = tcpMem[0][1]
+tcpMem_s2_n2 = tcpMem[1][1]
+tcpMem_s2_n3 = tcpMem[2][1]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, tcpMem_s2_n1[:minLenCPU], '-o', x, tcpMem_s2_n2[:minLenCPU], '-o', x, tcpMem_s2_n3[:minLenCPU], '-o', x, memData[0][1][:minLenCPU], '-o', x, memData[1][1][:minLenCPU], '-o', x, memData[2][1][:minLenCPU], '-o')
+plt.ylabel('Memory Utilization (%)')
+plt.xlabel('Number of Times')
+plt.title('Memory Utilization of nodes in normal and attack mode\n (TCP Flood: 100pkt/s)')
+plt.legend(cpuLegend3)
+
+## tcp -> mem -> s3
+tcpMem_s3_n1 = tcpMem[0][2]
+tcpMem_s3_n2 = tcpMem[1][2]
+tcpMem_s3_n3 = tcpMem[2][2]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, tcpMem_s3_n1[:minLenCPU], '-o', x, tcpMem_s3_n2[:minLenCPU], '-o', x, tcpMem_s3_n3[:minLenCPU], '-o', x, memData[0][2][:minLenCPU], '-o', x, memData[1][2][:minLenCPU], '-o', x, memData[2][2][:minLenCPU], '-o')
+plt.ylabel('Memory Utilization (%)')
+plt.xlabel('Number of Times')
+plt.title('Memory Utilization of nodes in normal and attack mode\n (TCP Flood: Random - AFAP)')
+plt.legend(cpuLegend3)
+
+
+## udp -> mem -> s1
+udpMem_s1_n1 = udpMem[0][0]
+udpMem_s1_n2 = udpMem[1][0]
+udpMem_s1_n3 = udpMem[2][0]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, udpMem_s1_n1[:minLenCPU], '-o', x, udpMem_s1_n2[:minLenCPU], '-o', x, udpMem_s1_n3[:minLenCPU], '-o', x, memData[0][0][:minLenCPU], '-o', x, memData[1][0][:minLenCPU], '-o', x, memData[2][0][:minLenCPU], '-o')
+plt.ylabel('Memory Utilization (%)')
+plt.xlabel('Number of Times')
+plt.title('Memory Utilization of nodes in normal and attack mode\n (UDP Flood: 10pkt/s)')
+plt.legend(cpuLegend3)
+
+## udp -> mem -> s2
+udpMem_s2_n1 = udpMem[0][1]
+udpMem_s2_n2 = udpMem[1][1]
+udpMem_s2_n3 = udpMem[2][1]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, udpMem_s2_n1[:minLenCPU], '-o', x, udpMem_s2_n2[:minLenCPU], '-o', x, udpMem_s2_n3[:minLenCPU], '-o', x, memData[0][1][:minLenCPU], '-o', x, memData[1][1][:minLenCPU], '-o', x, memData[2][1][:minLenCPU], '-o')
+plt.ylabel('Memory Utilization (%)')
+plt.xlabel('Number of Times')
+plt.title('Memory Utilization of nodes in normal and attack mode\n (UDP Flood: 100pkt/s)')
+plt.legend(cpuLegend3)
+
+## udp -> mem -> s3
+udpMem_s3_n1 = udpMem[0][2]
+udpMem_s3_n2 = udpMem[1][2]
+udpMem_s3_n3 = udpMem[2][2]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, udpMem_s3_n1[:minLenCPU], '-o', x, udpMem_s3_n2[:minLenCPU], '-o', x, udpMem_s3_n3[:minLenCPU], '-o', x, memData[0][2][:minLenCPU], '-o', x, memData[1][2][:minLenCPU], '-o', x, memData[2][2][:minLenCPU], '-o')
+plt.ylabel('Memory Utilization (%)')
+plt.xlabel('Number of Times')
+plt.title('Memory Utilization of nodes in normal and attack mode\n (UDP Flood: Random - AFAP)')
+plt.legend(cpuLegend3)
+
+
+
+## Checking the effect of the DoS on ctx_switches
+csData= [[[], [], []], [[], [], []], [[], [], []]] # n1, n2, n3
+
+for scenario in range(1, 4):
+    for node in range(1, 4):
+        for data in db.getCPUData(node, scenario):
+            n = node - 1
+            scn = scenario - 1
+            csData[n][scn].append(data['ctx_switches'])
+
+icmpCs = [ [[], [], []],  [[], [], []], [[], [], []] ] # node [s1, s2, s3]
+tcpCs  = [ [[], [], []],  [[], [], []], [[], [], []] ] # node [s1, s2, s3]
+udpCs  = [ [[], [], []],  [[], [], []], [[], [], []] ] # node [s1, s2, s3]
+
+minLenCPU = 200
+
+for x in scenarios:
+    # icmp
+    for data in db.getPS("icmp", x):
+        node = data['node']
+        scn = data['scenario']
+        icmpCs[node - 1][scn - 1].append(data['ctx_switches'])
+
+    # tcp
+    for data in db.getPS("tcp", x):
+        node = data['node']
+        scn = data['scenario']
+        tcpCs[node -1 ][scn - 1].append(data['ctx_switches'])
+
+    # udp
+    for data in db.getPS("udp", x):
+        node = data['node']
+        scn = data['scenario']
+        udpCs[node - 1][scn - 1].append(data['ctx_switches'])
+
+## icmp -> cs -> s1
+icmpCs_s1_n1 = icmpCs[0][0]
+icmpCs_s1_n2 = icmpCs[1][0]
+icmpCs_s1_n3 = icmpCs[2][0]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, icmpCs_s1_n1[:minLenCPU], '-o', x, icmpCs_s1_n2[:minLenCPU], '-o', x, icmpCs_s1_n3[:minLenCPU], '-o', x, csData[0][0][:minLenCPU], '-o', x, csData[1][0][:minLenCPU], '-o', x, csData[2][0][:minLenCPU], '-o')
+plt.ylabel('Context Switches')
+plt.xlabel('Number of Times')
+plt.title('Context Switches of nodes in normal and attack mode\n (ICMP Flood: 10pkt/s)')
+plt.legend(cpuLegend3)
+
+## icmp -> cs -> s2
+icmpCs_s2_n1 = icmpCs[0][1]
+icmpCs_s2_n2 = icmpCs[1][1]
+icmpCs_s2_n3 = icmpCs[2][1]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, icmpCs_s2_n1[:minLenCPU], '-o', x, icmpCs_s2_n2[:minLenCPU], '-o', x, icmpCs_s2_n3[:minLenCPU], '-o', x, csData[0][1][:minLenCPU], '-o', x, csData[1][1][:minLenCPU], '-o', x, csData[2][1][:minLenCPU], '-o')
+plt.ylabel('Context Switches')
+plt.xlabel('Number of Times')
+plt.title('Context Switches of nodes in normal and attack mode\n (ICMP Flood: 100pkt/s)')
+plt.legend(cpuLegend3)
+
+## icmp -> cs -> s3
+icmpCs_s3_n1 = icmpCs[0][2]
+icmpCs_s3_n2 = icmpCs[1][2]
+icmpCs_s3_n3 = icmpCs[2][2]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, icmpCs_s3_n1[:minLenCPU], '-o', x, icmpCs_s3_n2[:minLenCPU], '-o', x, icmpCs_s3_n3[:minLenCPU], '-o', x, csData[0][2][:minLenCPU], '-o', x, csData[1][2][:minLenCPU], '-o', x, csData[2][2][:minLenCPU], '-o')
+plt.ylabel('Context Switches')
+plt.xlabel('Number of Times')
+plt.title('Context Switches of nodes in normal and attack mode\n (ICMP Flood: Random - AFAP)')
+plt.legend(cpuLegend3)
+
+
+## tcp -> cs -> s1
+tcpCs_s1_n1 = tcpCs[0][0]
+tcpCs_s1_n2 = tcpCs[1][0]
+tcpCs_s1_n3 = tcpCs[2][0]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, tcpCs_s1_n1[:minLenCPU], '-o', x, tcpCs_s1_n2[:minLenCPU], '-o', x, tcpCs_s1_n3[:minLenCPU], '-o', x, csData[0][0][:minLenCPU], '-o', x, csData[1][0][:minLenCPU], '-o', x, csData[2][0][:minLenCPU], '-o')
+plt.ylabel('Context Switches')
+plt.xlabel('Number of Times')
+plt.title('Context Switches of nodes in normal and attack mode\n (TCP Flood: 10pkt/s)')
+plt.legend(cpuLegend3)
+
+## tcp -> cs -> s2
+tcpCs_s2_n1 = tcpCs[0][1]
+tcpCs_s2_n2 = tcpCs[1][1]
+tcpCs_s2_n3 = tcpCs[2][1]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, tcpCs_s2_n1[:minLenCPU], '-o', x, tcpCs_s2_n2[:minLenCPU], '-o', x, tcpCs_s2_n3[:minLenCPU], '-o', x, csData[0][1][:minLenCPU], '-o', x, csData[1][1][:minLenCPU], '-o', x, csData[2][1][:minLenCPU], '-o')
+plt.ylabel('Context Switches')
+plt.xlabel('Number of Times')
+plt.title('Context Switches of nodes in normal and attack mode\n (TCP Flood: 100pkt/s)')
+plt.legend(cpuLegend3)
+
+## tcp -> cs -> s3
+tcpCs_s3_n1 = tcpCs[0][2]
+tcpCs_s3_n2 = tcpCs[1][2]
+tcpCs_s3_n3 = tcpCs[2][2]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, tcpCs_s3_n1[:minLenCPU], '-o', x, tcpCs_s3_n2[:minLenCPU], '-o', x, tcpCs_s3_n3[:minLenCPU], '-o', x, csData[0][2][:minLenCPU], '-o', x, csData[1][2][:minLenCPU], '-o', x, csData[2][2][:minLenCPU], '-o')
+plt.ylabel('Context Switches')
+plt.xlabel('Number of Times')
+plt.title('Context Switches of nodes in normal and attack mode\n (TCP Flood: Random - AFAP)')
+plt.legend(cpuLegend3)
+
+
+## udp -> cs -> s1
+udpCs_s1_n1 = udpCs[0][0]
+udpCs_s1_n2 = udpCs[1][0]
+udpCs_s1_n3 = udpCs[2][0]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, udpCs_s1_n1[:minLenCPU], '-o', x, udpCs_s1_n2[:minLenCPU], '-o', x, udpCs_s1_n3[:minLenCPU], '-o', x, csData[0][0][:minLenCPU], '-o', x, csData[1][0][:minLenCPU], '-o', x, csData[2][0][:minLenCPU], '-o')
+plt.ylabel('Context Switches')
+plt.xlabel('Number of Times')
+plt.title('Context Switches of nodes in normal and attack mode\n (UDP Flood: 10pkt/s)')
+plt.legend(cpuLegend3)
+
+## udp -> cs -> s2
+udpCs_s2_n1 = udpCs[0][1]
+udpCs_s2_n2 = udpCs[1][1]
+udpCs_s2_n3 = udpCs[2][1]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, udpCs_s2_n1[:minLenCPU], '-o', x, udpCs_s2_n2[:minLenCPU], '-o', x, udpCs_s2_n3[:minLenCPU], '-o', x, csData[0][1][:minLenCPU], '-o', x, csData[1][1][:minLenCPU], '-o', x, csData[2][1][:minLenCPU], '-o')
+plt.ylabel('Context Switches')
+plt.xlabel('Number of Times')
+plt.title('Context Switches of nodes in normal and attack mode\n (UDP Flood: 100pkt/s)')
+plt.legend(cpuLegend3)
+
+## udp -> cs -> s3
+udpCs_s3_n1 = udpCs[0][2]
+udpCs_s3_n2 = udpCs[1][2]
+udpCs_s3_n3 = udpCs[2][2]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, udpCs_s3_n1[:minLenCPU], '-o', x, udpCs_s3_n2[:minLenCPU], '-o', x, udpCs_s3_n3[:minLenCPU], '-o', x, csData[0][2][:minLenCPU], '-o', x, csData[1][2][:minLenCPU], '-o', x, csData[2][2][:minLenCPU], '-o')
+plt.ylabel('Context Switches')
+plt.xlabel('Number of Times')
+plt.title('Context Switches of nodes in normal and attack mode\n (UDP Flood: Random - AFAP)')
+plt.legend(cpuLegend3)
+
+
+
+## Checking the effect of the DoS on soft_interrupts
+siData= [[[], [], []], [[], [], []], [[], [], []]] # n1, n2, n3
+
+for scenario in range(1, 4):
+    for node in range(1, 4):
+        for data in db.getCPUData(node, scenario):
+            n = node - 1
+            scn = scenario - 1
+            siData[n][scn].append(data['soft_interrupts'])
+
+icmpSi = [ [[], [], []],  [[], [], []], [[], [], []] ] # node [s1, s2, s3]
+tcpSi  = [ [[], [], []],  [[], [], []], [[], [], []] ] # node [s1, s2, s3]
+udpSi  = [ [[], [], []],  [[], [], []], [[], [], []] ] # node [s1, s2, s3]
+
+minLenCPU = 200
+
+for x in scenarios:
+    # icmp
+    for data in db.getPS("icmp", x):
+        node = data['node']
+        scn = data['scenario']
+        icmpSi[node - 1][scn - 1].append(data['soft_interrupts'])
+
+    # tcp
+    for data in db.getPS("tcp", x):
+        node = data['node']
+        scn = data['scenario']
+        tcpSi[node -1 ][scn - 1].append(data['soft_interrupts'])
+
+    # udp
+    for data in db.getPS("udp", x):
+        node = data['node']
+        scn = data['scenario']
+        udpSi[node - 1][scn - 1].append(data['soft_interrupts'])
+
+## icmp -> si -> s1
+icmpSi_s1_n1 = icmpSi[0][0]
+icmpSi_s1_n2 = icmpSi[1][0]
+icmpSi_s1_n3 = icmpSi[2][0]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, icmpSi_s1_n1[:minLenCPU], '-o', x, icmpSi_s1_n2[:minLenCPU], '-o', x, icmpSi_s1_n3[:minLenCPU], '-o', x, siData[0][0][:minLenCPU], '-o', x, siData[1][0][:minLenCPU], '-o', x, siData[2][0][:minLenCPU], '-o')
+plt.ylabel('Soft Interrupts')
+plt.xlabel('Number of Times')
+plt.title('Soft Interrupts of nodes in normal and attack mode\n (ICMP Flood: 10pkt/s)')
+plt.legend(cpuLegend3)
+
+## icmp -> si -> s2
+icmpSi_s2_n1 = icmpSi[0][1]
+icmpSi_s2_n2 = icmpSi[1][1]
+icmpSi_s2_n3 = icmpSi[2][1]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, icmpSi_s2_n1[:minLenCPU], '-o', x, icmpSi_s2_n2[:minLenCPU], '-o', x, icmpSi_s2_n3[:minLenCPU], '-o', x, siData[0][1][:minLenCPU], '-o', x, siData[1][1][:minLenCPU], '-o', x, siData[2][1][:minLenCPU], '-o')
+plt.ylabel('Soft Interrupts')
+plt.xlabel('Number of Times')
+plt.title('Soft Interrupts of nodes in normal and attack mode\n (ICMP Flood: 100pkt/s)')
+plt.legend(cpuLegend3)
+
+## icmp -> si -> s3
+icmpSi_s3_n1 = icmpSi[0][2]
+icmpSi_s3_n2 = icmpSi[1][2]
+icmpSi_s3_n3 = icmpSi[2][2]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, icmpSi_s3_n1[:minLenCPU], '-o', x, icmpSi_s3_n2[:minLenCPU], '-o', x, icmpSi_s3_n3[:minLenCPU], '-o', x, siData[0][2][:minLenCPU], '-o', x, siData[1][2][:minLenCPU], '-o', x, siData[2][2][:minLenCPU], '-o')
+plt.ylabel('Soft Interrupts')
+plt.xlabel('Number of Times')
+plt.title('Soft Interrupts of nodes in normal and attack mode\n (ICMP Flood: Random - AFAP)')
+plt.legend(cpuLegend3)
+
+
+## tcp -> si -> s1
+tcpSi_s1_n1 = tcpSi[0][0]
+tcpSi_s1_n2 = tcpSi[1][0]
+tcpSi_s1_n3 = tcpSi[2][0]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, tcpSi_s1_n1[:minLenCPU], '-o', x, tcpSi_s1_n2[:minLenCPU], '-o', x, tcpSi_s1_n3[:minLenCPU], '-o', x, siData[0][0][:minLenCPU], '-o', x, siData[1][0][:minLenCPU], '-o', x, siData[2][0][:minLenCPU], '-o')
+plt.ylabel('Soft Interrupts')
+plt.xlabel('Number of Times')
+plt.title('Soft Interrupts of nodes in normal and attack mode\n (TCP Flood: 10pkt/s)')
+plt.legend(cpuLegend3)
+
+## tcp -> si -> s2
+tcpSi_s2_n1 = tcpSi[0][1]
+tcpSi_s2_n2 = tcpSi[1][1]
+tcpSi_s2_n3 = tcpSi[2][1]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, tcpSi_s2_n1[:minLenCPU], '-o', x, tcpSi_s2_n2[:minLenCPU], '-o', x, tcpSi_s2_n3[:minLenCPU], '-o', x, siData[0][1][:minLenCPU], '-o', x, siData[1][1][:minLenCPU], '-o', x, siData[2][1][:minLenCPU], '-o')
+plt.ylabel('Soft Interrupts')
+plt.xlabel('Number of Times')
+plt.title('Soft Interrupts of nodes in normal and attack mode\n (TCP Flood: 100pkt/s)')
+plt.legend(cpuLegend3)
+
+## tcp -> si -> s3
+tcpSi_s3_n1 = tcpSi[0][2]
+tcpSi_s3_n2 = tcpSi[1][2]
+tcpSi_s3_n3 = tcpSi[2][2]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, tcpSi_s3_n1[:minLenCPU], '-o', x, tcpSi_s3_n2[:minLenCPU], '-o', x, tcpSi_s3_n3[:minLenCPU], '-o', x, siData[0][2][:minLenCPU], '-o', x, siData[1][2][:minLenCPU], '-o', x, siData[2][2][:minLenCPU], '-o')
+plt.ylabel('Soft Interrupts')
+plt.xlabel('Number of Times')
+plt.title('Soft Interrupts of nodes in normal and attack mode\n (TCP Flood: Random - AFAP)')
+plt.legend(cpuLegend3)
+
+
+## udp -> si -> s1
+udpSi_s1_n1 = udpSi[0][0]
+udpSi_s1_n2 = udpSi[1][0]
+udpSi_s1_n3 = udpSi[2][0]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, udpSi_s1_n1[:minLenCPU], '-o', x, udpSi_s1_n2[:minLenCPU], '-o', x, udpSi_s1_n3[:minLenCPU], '-o', x, siData[0][0][:minLenCPU], '-o', x, siData[1][0][:minLenCPU], '-o', x, siData[2][0][:minLenCPU], '-o')
+plt.ylabel('Soft Interrupts')
+plt.xlabel('Number of Times')
+plt.title('Soft Interrupts of nodes in normal and attack mode\n (UDP Flood: 10pkt/s)')
+plt.legend(cpuLegend3)
+
+## udp -> si -> s2
+udpSi_s2_n1 = udpSi[0][1]
+udpSi_s2_n2 = udpSi[1][1]
+udpSi_s2_n3 = udpSi[2][1]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, udpSi_s2_n1[:minLenCPU], '-o', x, udpSi_s2_n2[:minLenCPU], '-o', x, udpSi_s2_n3[:minLenCPU], '-o', x, siData[0][1][:minLenCPU], '-o', x, siData[1][1][:minLenCPU], '-o', x, siData[2][1][:minLenCPU], '-o')
+plt.ylabel('Soft Interrupts')
+plt.xlabel('Number of Times')
+plt.title('Soft Interrupts of nodes in normal and attack mode\n (UDP Flood: 100pkt/s)')
+plt.legend(cpuLegend3)
+
+## udp -> si -> s3
+udpSi_s3_n1 = udpSi[0][2]
+udpSi_s3_n2 = udpSi[1][2]
+udpSi_s3_n3 = udpSi[2][2]
+x = np.linspace(1, minLenCPU, minLenCPU)
+
+plt.figure()
+plt.plot(x, udpSi_s3_n1[:minLenCPU], '-o', x, udpSi_s3_n2[:minLenCPU], '-o', x, udpSi_s3_n3[:minLenCPU], '-o', x, siData[0][2][:minLenCPU], '-o', x, siData[1][2][:minLenCPU], '-o', x, siData[2][2][:minLenCPU], '-o')
+plt.ylabel('Soft Interrupts')
+plt.xlabel('Number of Times')
+plt.title('Soft Interrupts of nodes in normal and attack mode\n (UDP Flood: Random - AFAP)')
+plt.legend(cpuLegend3)
+
+
 # display all graphs 
 plt.show()
