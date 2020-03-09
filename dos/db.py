@@ -55,6 +55,12 @@ def addP(srcMac, dstMac, srcIP, dstIP, sport, dport, category, scenario, node, p
     print("\n")
 
 
+def getTable(table):
+    con = init()
+    cursor = con.cursor()
+    cursor.execute("select * from " + str(table))
+    return cursor.fetchall()
+
 def getP(table):
     con = init()
     cursor = con.cursor()
