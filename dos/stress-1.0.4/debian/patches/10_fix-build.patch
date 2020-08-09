@@ -1,0 +1,23 @@
+Description: disable the texinfo build to avoid a FTBFS.
+Author: Joao Eriberto Mota Filho <eriberto@debian.org>
+Last-Update: 2015-05-10
+Index: stress-1.0.1/doc/Makefile.am
+===================================================================
+--- stress-1.0.1.orig/doc/Makefile.am
++++ stress-1.0.1/doc/Makefile.am
+@@ -1,11 +1,11 @@
+-info_TEXINFOS = stress.texi
++#info_TEXINFOS = stress.texi
+ man_MANS = stress.1
+-EXTRA_DIST = $(man_MANS) stress.html
++#EXTRA_DIST = $(man_MANS) stress.html
+ 
+ MAINTAINERCLEANFILES = Makefile.in mdate-sh texinfo.tex stress.html $(man_MANS)
+ 
+ stress.1:
+ 	help2man -n 'tool to impose load on and stress test systems' ../src/stress > $@
+ 
+-stress.html: stress.texi
+-	$(MAKEINFO) --no-split --html $<
++#stress.html: stress.texi
++#	$(MAKEINFO) --no-split --html $<

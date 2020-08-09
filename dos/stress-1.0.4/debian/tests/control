@@ -1,0 +1,4 @@
+Test-Command: stress --cpu 1 --io 1 --vm 1 --vm-bytes 1M --timeout 1s
+
+Test-Command: dh_auto_test
+Depends: @, debhelper, gawk

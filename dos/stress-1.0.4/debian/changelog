@@ -1,0 +1,126 @@
+stress (1.0.4-7) unstable; urgency=medium
+
+  * debian/control:
+      - Bumped Standards-Version to 4.5.0.
+      - Migrated DH level to 13.
+  * debian/copyright: updated packaging copyright years.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Thu, 30 Apr 2020 15:44:42 -0300
+
+stress (1.0.4-6) unstable; urgency=medium
+
+  * debian/control:
+      - Added 'Rules-Requires-Root: no' in source stanza.
+      - Bumped Standards-Version to 4.4.1.
+  * debian/salsa-ci.yml: created to start CI tests for Salsa.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Tue, 22 Oct 2019 15:33:23 -0300
+
+stress (1.0.4-5) unstable; urgency=medium
+
+  * Using new DH level format. Consequently:
+      - debian/compat: removed.
+      - debian/control: changed from 'debhelper' to 'debhelper-compat' in
+        Build-Depends field and bumped level to 12.
+  * debian/control:
+      - Bumped Standards-Version to 4.4.0.
+      - Removed Homepage field because the upstream no longer has a website.
+  * debian/copyright: updated packaging copyright years.
+  * debian/upstream/signing-key.asc: removed because the upstream no longer
+    has a website.
+  * debian/watch: changed to use a fake site to explain about the current
+    status of the original upstream homepage.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Mon, 05 Aug 2019 22:39:11 -0300
+
+stress (1.0.4-4) unstable; urgency=medium
+
+  * debian/copyright: removed no longer existent upstream email address.
+  * debian/tests/control: added a new stanza to use the upstream tests.
+  * debian/upstream/signing-key.asc: re-exported without extra signatures.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Mon, 03 Dec 2018 22:13:25 -0200
+
+stress (1.0.4-3) unstable; urgency=medium
+
+  * Migrated DH level to 11.
+  * debian/control:
+      - Bumped Standards-Version to 4.2.1.
+      - Changed Vcs-* URLs to salsa.debian.org.
+      - Removed no longer needed build dependency dh-autoreconf.
+  * debian/copyright:
+      - Updated packaging copyright years.
+      - Using a secure copyright format in URI.
+  * debian/rules: removed '--with autoreconf' because it is default since DH 10.
+  * debian/tests/control: created to perform a trivial test.
+  * debian/watch: using https instead of http.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Sat, 22 Sep 2018 00:09:19 -0300
+
+stress (1.0.4-2) unstable; urgency=medium
+
+  * Bumped DH level to 10.
+  * debian/control:
+      - Bumped Standards-Version to 3.9.8.
+      - Updated the Vcs-* fields to use https instead of http and git.
+  * debian/copyright: updated the packaging copyright years.
+  * debian/docs: added AUTHORS and TODO files.
+  * debian/patches/fix-build: renamed to 10_fix-build.patch.
+  * debian/watch: bumped to version 4.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Thu, 17 Nov 2016 20:01:48 -0200
+
+stress (1.0.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/copyright: updated the upstream copyright years.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Sun, 10 May 2015 10:50:40 -0300
+
+stress (1.0.1-2) unstable; urgency=medium
+
+  * New maintainer. Thanks a lot to Amos Waterland, the initial maintainer,
+      for your nice work over this package. Amos is also the upstream.
+  * New homepage.
+  * Migrations:
+      - debian/copyright to 1.0 format.
+      - debian/rules to new (reduced) format. (Closes: #712061)
+      - DebSrc to 3.0 version.
+      - DH level to 9.
+      - Using autoreconf.
+  * debian/control:
+      - Added the Vcs-* fields.
+      - Added the ${misc:Depends} to Depends field.
+      - Bumped Standards-Version to 3.9.6.
+      - Changed the priority from extra to optional.
+      - Removed the leading article from short description.
+  * debian/patches/fix-build: disable the texinfo build to avoid a FTBFS.
+  * debian/watch:
+      - Added.
+      - Using upstream signature to verify his tarballs.
+
+ -- Joao Eriberto Mota Filho <eriberto@debian.org>  Tue, 05 May 2015 11:39:29 -0300
+
+stress (1.0.1-1) unstable; urgency=low
+
+  * Move to latest upstream version; closes: #541007
+
+ -- Amos Waterland <apw@rossby.metr.ou.edu>  Tue, 11 Aug 2009 20:34:41 -0400
+
+stress (0.18.9-1) unstable; urgency=low
+
+  * Update to upstream latest version, fix lintian warnings.
+
+ -- Amos Waterland <apw@rossby.metr.ou.edu>  Wed, 17 Jan 2007 19:46:31 -0500
+
+stress (0.18.6-1) unstable; urgency=low
+
+  * Update to upstream latest version, fix standard version lintian warning.
+
+ -- Amos Waterland <apw@rossby.metr.ou.edu>  Tue, 09 Aug 2005 16:48:14 -0500
+
+stress (0.18.4-1) unstable; urgency=low
+
+  * Initial Release (Closes: #269512).
+
+ -- Amos Waterland <apw@rossby.metr.ou.edu>  Wed, 09 Mar 2005 20:27:18 -0500

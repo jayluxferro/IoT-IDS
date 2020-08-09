@@ -170,11 +170,13 @@ plt.show()
 
 ## icmp (mean ipat)
 plt.figure()
+#mean_x = [ int(x) for x in mean_x ]
 plt.plot(mean_x, [mean_icmp_n1_s1, mean_icmp_n2_s1, mean_icmp_n3_s1], '-o', mean_x, [mean_icmp_n1_s2, mean_icmp_n2_s2, mean_icmp_n3_s2], '-o', mean_x, [mean_icmp_n1_s3, mean_icmp_n2_s3, mean_icmp_n3_s3], '-o')
 plt.xlabel('Nodes')
 plt.ylabel('Average Inter-Packet Arrival Time (s)')
 #plt.title('Average Inter-Packet Arrival Time for ICMP Flood Attack')
 plt.legend(cpuLegend)
+plt.xticks(mean_x)
 plt.show()
 
 ## TCP (Inter-Packet Arrival Time)
@@ -263,6 +265,7 @@ plt.xlabel('Nodes')
 plt.ylabel('Average Inter-Packet Arrival Time (s)')
 #plt.title('Average Inter-Packet Arrival Time for TCP Flood Attack')
 plt.legend(cpuLegend)
+plt.xticks(mean_x)
 plt.show()
 
 ## UDP Inter-Packet Arrival Time
@@ -355,6 +358,7 @@ plt.xlabel('Nodes')
 plt.ylabel('Average Inter-Packet Arrival Time (s)')
 #plt.title('Average Inter-Packet Arrival Time for UDP Flood Attack')
 plt.legend(cpuLegend)
+plt.xticks(mean_x)
 plt.show()
 
 """

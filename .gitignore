@@ -3,3 +3,5 @@
 *.pyc
 *.swp
 *.pcap
+*~
+dos/results/
