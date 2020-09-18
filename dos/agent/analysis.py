@@ -10,11 +10,15 @@ import numpy as np
 # CPU Data
 n1_normal = [[], []] # cpu, mem
 n1_active = [[], []]
+n1_mb = []
+
 n2_normal = [[], []]
 n2_active = [[], []]
+n2_mb = []
+
 n3_normal = [[], []]
 n3_active = [[], []]
-
+n3_mb = []
 
 for x in db.getTable("cpu"):
     if x['node'] == 1:
@@ -40,6 +44,7 @@ for x in db.getTable("cpu"):
             n3_active[1].append(x['mem'])
 
 maxPoints = 20
+
 x = np.linspace(1, maxPoints - 1, maxPoints - 1)
 plt.figure()
 plt.plot(x, n1_normal[0][1:maxPoints], '-o', x, n1_active[0][1:maxPoints], '-o')
@@ -86,6 +91,28 @@ plt.plot(x, n3_normal[1][1:maxPoints], '-o', x, n3_active[1][1:maxPoints], '-o')
 plt.legend(['N3 - Normal', 'N3 - Active'])
 plt.xlabel('Number of times')
 plt.ylabel('Memory Utilization (%)')
+plt.show()
+
+# memory -> bytes
+def getMemB(normal, active):
+    counter = 0
+    diff = []
+
+    for x in normal:
+        diff.append((active[counter] - x) * 1024/100.0)
+        counter = counter + 1
+
+    return diff
+n1_mb = getMemB(n1_normal[1][1:maxPoints], n1_active[1][1:maxPoints])
+n2_mb = getMemB(n2_normal[1][1:maxPoints], n2_active[1][1:maxPoints])
+n3_mb = getMemB(n3_normal[1][1:maxPoints], n3_active[1][1:maxPoints])
+print(np.mean(n1_mb), np.mean(n2_mb), np.mean(n3_mb))
+plt.figure()
+plt.plot(x, n1_mb, '-o', x, n2_mb, '-o', x, n3_mb, '-o')
+plt.legend(['N1', 'N2', 'N3'])
+plt.xlabel('Number of times')
+plt.ylabel('Memory Utilization (bytes)')
+plt.xticks(x)
 plt.show()
 
 # Detection

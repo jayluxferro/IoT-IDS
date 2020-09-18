@@ -12,6 +12,9 @@ import numpy as np
 import func as f
 import sys
 
+# defs
+ramSize = 1024 # megabytes
+
 # cpu usage analysis
 cpuData= [[[], [], []], [[], [], []], [[], [], []]] # n1, n2, n3
 
