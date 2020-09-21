@@ -111,7 +111,7 @@ plt.figure()
 plt.plot(x, n1_mb, '-o', x, n2_mb, '-o', x, n3_mb, '-o')
 plt.legend(['N1', 'N2', 'N3'])
 plt.xlabel('Number of times')
-plt.ylabel('Memory Utilization (bytes)')
+plt.ylabel('Memory Utilization (megabytes)')
 plt.xticks(x)
 plt.show()
 
