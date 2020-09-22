@@ -91,3 +91,10 @@ def getCPUData(node, scenario):
     cursor = con.cursor()
     cursor.execute("select * from cpu where node=? and scenario=?", (node, scenario))
     return cursor.fetchall()
+
+
+def addBattery(power, scenario, node):
+    con = init()
+    cursor = con.cursor()
+    cursor.execute("insert into battery(power, scenario, node) values(?, ?, ?)", (power, scenario, node))
+    con.commit()
