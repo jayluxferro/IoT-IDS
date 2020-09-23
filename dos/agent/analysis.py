@@ -51,6 +51,7 @@ plt.plot(x, n1_normal[0][1:maxPoints], '-o', x, n1_active[0][1:maxPoints], '-o')
 plt.legend(['N1 - Normal', 'N1 - Active'])
 plt.xlabel('Number of times')
 plt.ylabel('CPU Utilization (%)')
+plt.xticks(x)
 plt.show()
 
 
@@ -59,6 +60,7 @@ plt.plot(x, n2_normal[0][1:maxPoints], '-o', x, n2_active[0][1:maxPoints], '-o')
 plt.legend(['N2 - Normal', 'N2 - Active'])
 plt.xlabel('Number of times')
 plt.ylabel('CPU Utilization (%)')
+plt.xticks(x)
 plt.show()
 
 
@@ -67,6 +69,7 @@ plt.plot(x, n3_normal[0][1:maxPoints], '-o', x, n3_active[0][1:maxPoints], '-o')
 plt.legend(['N3 - Normal', 'N3 - Active'])
 plt.xlabel('Number of times')
 plt.ylabel('CPU Utilization (%)')
+plt.xticks(x)
 plt.show()
 
 ## memory
@@ -75,6 +78,7 @@ plt.plot(x, n1_normal[1][1:maxPoints], '-o', x, n1_active[1][1:maxPoints], '-o')
 plt.legend(['N1 - Normal', 'N1 - Active'])
 plt.xlabel('Number of times')
 plt.ylabel('Memory Utilization (%)')
+plt.xticks(x)
 plt.show()
 
 
@@ -83,6 +87,7 @@ plt.plot(x, n2_normal[1][1:maxPoints], '-o', x, n2_active[1][1:maxPoints], '-o')
 plt.legend(['N2 - Normal', 'N2 - Active'])
 plt.xlabel('Number of times')
 plt.ylabel('Memory Utilization (%)')
+plt.xticks(x)
 plt.show()
 
 
@@ -91,6 +96,7 @@ plt.plot(x, n3_normal[1][1:maxPoints], '-o', x, n3_active[1][1:maxPoints], '-o')
 plt.legend(['N3 - Normal', 'N3 - Active'])
 plt.xlabel('Number of times')
 plt.ylabel('Memory Utilization (%)')
+plt.xticks(x)
 plt.show()
 
 # memory -> bytes
